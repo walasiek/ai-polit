@@ -1,0 +1,7 @@
+pandas
+numpy
+ipython
+ipykernel
+jupyter_contrib_nbextensions
+tqdm
+jupyter_dashboards
