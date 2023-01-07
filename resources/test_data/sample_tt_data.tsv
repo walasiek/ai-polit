@@ -1,0 +1,3 @@
+username	tweet_id	text	datetime
+test_user	1234567890123456789	tutaj jest treść tłita	2022-01-01 12:01:02
+test_user2	1234567890123456790	i kolejny tłit	2022-01-01 12:02:02
