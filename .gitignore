@@ -132,3 +132,4 @@ dmypy.json
 # Repo specific
 *~
 zrzut*
+local_scripts/*

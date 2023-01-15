@@ -5,3 +5,5 @@ ipykernel
 jupyter_contrib_nbextensions
 tqdm
 jupyter_dashboards
+spacy
+scikit-learn

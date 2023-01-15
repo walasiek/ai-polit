@@ -22,6 +22,11 @@ if [[ ! -d $VIRTUALENV_DIR ]]; then
     jupyter dashboards quick-setup --sys-prefix
     # I dont know is it needed?
     jupyter nbextension enable jupyter_dashboards --py --sys-prefix
+
+    # Spacy models
+
+    # used for Lemmatization
+    python -m spacy download pl_core_news_sm
 else
     export PYTHONPATH=$PYTHONPATH:`pwd`
     source $VIRTUALENV_DIR/bin/activate
