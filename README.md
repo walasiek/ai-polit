@@ -5,7 +5,7 @@ AI for politics. My toys to measure politics using NLP and AI techniques.
 Testing
 =======
 
-To run all tests type:
+To run all tests type (use -s for debug show of prints ;) ):
 
     pytest tests
 

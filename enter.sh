@@ -27,6 +27,7 @@ if [[ ! -d $VIRTUALENV_DIR ]]; then
 
     # used for Lemmatization
     python -m spacy download pl_core_news_sm
+    python -m spacy download pl_core_news_md
 else
     export PYTHONPATH=$PYTHONPATH:`pwd`
     source $VIRTUALENV_DIR/bin/activate
