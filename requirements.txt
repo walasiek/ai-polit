@@ -7,3 +7,5 @@ tqdm
 jupyter_dashboards
 spacy
 scikit-learn
+lime
+shap
