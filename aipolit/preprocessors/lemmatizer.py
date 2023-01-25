@@ -1,11 +1,6 @@
 import spacy
 import re
-from aipolit.preprocessors.text_cleaners import EMOJI_STRING
-
-
-PRESERVE_USERNAME_AND_HASH_REGEX = re.compile(r"([#@][\w_]+)\b")
-PRESERVE_EMOJIS_REGEX = re.compile("([" + EMOJI_STRING + "]+)", re.UNICODE)
-ALL_WHITESPACE_REGEX = re.compile(r"\s+")
+from aipolit.preprocessors.tweet_cleaners import preserve_tokens
 
 
 class PLLemmatizer:
@@ -46,7 +41,7 @@ class PLLemmatizer:
         """
         result = []
 
-        prep_text, cache = self.preserve_tokens(text, ignore_tt_usernames_and_hashes, ignore_emojis)
+        prep_text, cache = preserve_tokens(text, ignore_tt_usernames_and_hashes, ignore_emojis)
 
         doc = self.model(prep_text)
         for token in doc:
@@ -63,22 +58,3 @@ class PLLemmatizer:
 
         result_text = " ".join(result)
         return result_text
-
-    def preserve_tokens(self, text, ignore_tt_usernames_and_hashes, ignore_emojis):
-        cache = dict()
-
-        def convert_func(matchobj):
-            matched_orig = matchobj.group(1)
-            match_id = f"LEMTOKEN_{len(cache)}"
-            cache[match_id] = matched_orig
-            return f" {match_id} "
-
-        if ignore_tt_usernames_and_hashes or ignore_emojis:
-            if ignore_tt_usernames_and_hashes:
-                text = re.sub(PRESERVE_USERNAME_AND_HASH_REGEX, convert_func, text)
-            if ignore_emojis:
-                text = re.sub(PRESERVE_EMOJIS_REGEX, convert_func, text)
-
-            text = re.sub(ALL_WHITESPACE_REGEX, " ", text)
-
-        return text, cache
