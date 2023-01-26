@@ -19,7 +19,7 @@ def remove_users_from_beg(text):
     return text
 
 
-def preserve_tokens(text, with_tt_usernames_and_hashes=True, with_emojis=True):
+def preserve_tokens(text, with_tt_usernames_and_hashes=True, with_emojis=True, surround_spaces=False):
     """
     Returns text with some entities replaced with keywords.
     Also returns mapping: keyword => original value
@@ -30,19 +30,22 @@ def preserve_tokens(text, with_tt_usernames_and_hashes=True, with_emojis=True):
         Here is #hashTag => Here is LEMTOKEN1
     """
     cache = dict()
+    surround = ""
+    if surround_spaces:
+        surround = ' '
 
     def convert_func(matchobj):
         matched_orig = matchobj.group(1)
         match_id = f"LEMTOKEN{len(cache)}"
 
         cache[match_id] = matched_orig
-        return f"{match_id}"
+        return f"{surround}{match_id}{surround}"
 
     def convert_emoji_func(chars, data_dict):
         match_id = f"LEMTOKEN{len(cache)}"
 
         cache[match_id] = chars
-        return f"{match_id}"
+        return f"{surround}{match_id}{surround}"
 
     if with_tt_usernames_and_hashes or with_emojis:
         if with_tt_usernames_and_hashes:

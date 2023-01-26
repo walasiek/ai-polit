@@ -29,7 +29,9 @@ def test_simple_pl_lemmatizer(input_text, expected_text):
     "input_text, expected_text",
     [
         ("Ala ma kota #kłamstwa", "ala mieć kot #kłamstwa"),
+        ("Ala ma kota#kłamstwa", "ala mieć kot #kłamstwa"),
         ("Ala ma @Kłamstwa", "ala mieć @Kłamstwa"),
+        ("Ala ma@Kłamstwa", "ala mieć @Kłamstwa"),
     ])
 def test_pl_lemmatizer_preserve_hashes(input_text, expected_text):
     lemmatizer = PLLemmatizer.get_instance()
@@ -46,7 +48,8 @@ def test_pl_lemmatizer_preserve_hashes(input_text, expected_text):
 @pytest.mark.parametrize(
     "input_text, expected_text",
     [
-        ("Ala ma kota 😀", "ala mieć kot 😀"),
+        ("Ala ma kota 😀😀", "ala mieć kot 😀 😀"),
+        ("Ala ma kota😀😀", "ala mieć kot 😀 😀"),
     ])
 def test_pl_lemmatizer_preserve_emojis(input_text, expected_text):
     lemmatizer = PLLemmatizer.get_instance()

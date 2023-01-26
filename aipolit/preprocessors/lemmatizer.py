@@ -1,6 +1,6 @@
 import spacy
 import re
-from aipolit.preprocessors.tweet_cleaners import preserve_tokens
+from aipolit.preprocessors.tweet_cleaners import preserve_tokens, restore_tokens
 
 
 class PLLemmatizer:
@@ -41,7 +41,11 @@ class PLLemmatizer:
         """
         result = []
 
-        prep_text, cache = preserve_tokens(text, ignore_tt_usernames_and_hashes, ignore_emojis)
+        prep_text, cache = preserve_tokens(
+            text,
+            with_tt_usernames_and_hashes=ignore_tt_usernames_and_hashes,
+            with_emojis=ignore_emojis,
+            surround_spaces=True)
 
         doc = self.model(prep_text)
         for token in doc:
@@ -50,11 +54,11 @@ class PLLemmatizer:
 
             # sometimes spacy returns two forms, hotfix
             orig_text = token.text
-            if orig_text not in cache:
+            if not orig_text.startswith('LEMTOKEN'):
                 lemma = token.lemma_.split(" ")[0]
                 result.append(lemma)
             else:
-                result.append(cache[orig_text])
+                result.append(restore_tokens(orig_text, cache))
 
         result_text = " ".join(result)
         return result_text
