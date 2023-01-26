@@ -9,3 +9,4 @@ spacy
 scikit-learn
 lime
 shap
+emoji

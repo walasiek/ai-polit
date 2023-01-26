@@ -2,6 +2,7 @@ import pytest
 from aipolit.preprocessors.text_cleaners import \
      remove_emojis, \
      remove_emails, \
+     remove_non_alphanumeric, \
      remove_urls
 
 
@@ -15,6 +16,7 @@ from aipolit.preprocessors.text_cleaners import \
         ("Text and😀emoji", "Text andemoji"),
         ("😀 Text and emoji", " Text and emoji"),
         ("😀", ""),
+        ("2022 🇵🇱", "2022 "),
     ])
 def test_remove_emojis(input_text, expected_text):
     assert expected_text == remove_emojis(input_text)
@@ -45,3 +47,14 @@ def test_remove_urls(input_text, expected_text):
     ])
 def test_remove_emails(input_text, expected_text):
     assert expected_text == remove_emails(input_text)
+
+
+@pytest.mark.parametrize(
+    "input_text, expected_text",
+    [
+        ("Text without email", "Text without email"),
+        ("Who are you?", "Who are you"),
+        ("Mr. 123", "Mr 123"),
+    ])
+def test_remove_non_alphanumeric(input_text, expected_text):
+    assert expected_text == remove_non_alphanumeric(input_text)

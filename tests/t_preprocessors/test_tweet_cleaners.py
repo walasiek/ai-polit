@@ -26,7 +26,8 @@ def test_remove_users_from_beg(input_text, expected_text):
         ("Text with @user and #hash", "Text with LEMTOKEN0 and LEMTOKEN1", {'LEMTOKEN0': '@user', 'LEMTOKEN1': '#hash'}),
         ("Text with @user and #hash and 😀", "Text with LEMTOKEN0 and LEMTOKEN1 and LEMTOKEN2", {'LEMTOKEN0': '@user', 'LEMTOKEN1': '#hash', "LEMTOKEN2": '😀'}),
         ("Text nospace😀", "Text nospaceLEMTOKEN0", {'LEMTOKEN0': '😀'}),
-        ("Text 😀😀😀😀😀😀", "Text LEMTOKEN0", {'LEMTOKEN0': '😀😀😀😀😀😀'}),
+        ("Text 😀😀😀", "Text LEMTOKEN0LEMTOKEN1LEMTOKEN2", {'LEMTOKEN0': '😀', 'LEMTOKEN1': '😀', 'LEMTOKEN2': '😀'}),
+        ("2022 🇵🇱 Minister", "2022 LEMTOKEN0 Minister", {'LEMTOKEN0': '🇵🇱'}),
     ])
 def test_preserve_tokens(input_text, expected_text, expected_cache):
     actual_text, actual_cache = preserve_tokens(input_text, with_tt_usernames_and_hashes=True, with_emojis=True)

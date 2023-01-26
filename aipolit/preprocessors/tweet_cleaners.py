@@ -2,11 +2,11 @@
 Tweet specific cleaning functions.
 """
 import re
-from aipolit.preprocessors.text_cleaners import EMOJI_STRING
+import emoji
+
 
 USERNAME_BEGIN_REGEX = re.compile(r"^(@[a-zA-Z0-9_]+ )+")
 PRESERVE_USERNAME_AND_HASH_REGEX = re.compile(r"([#@][\w_]+)\b")
-PRESERVE_EMOJIS_REGEX = re.compile("([" + EMOJI_STRING + "]+)", re.UNICODE)
 ALL_WHITESPACE_REGEX = re.compile(r"\s+")
 
 
@@ -19,7 +19,7 @@ def remove_users_from_beg(text):
     return text
 
 
-def preserve_tokens(text, with_tt_usernames_and_hashes, with_emojis):
+def preserve_tokens(text, with_tt_usernames_and_hashes=True, with_emojis=True):
     """
     Returns text with some entities replaced with keywords.
     Also returns mapping: keyword => original value
@@ -38,11 +38,17 @@ def preserve_tokens(text, with_tt_usernames_and_hashes, with_emojis):
         cache[match_id] = matched_orig
         return f"{match_id}"
 
+    def convert_emoji_func(chars, data_dict):
+        match_id = f"LEMTOKEN{len(cache)}"
+
+        cache[match_id] = chars
+        return f"{match_id}"
+
     if with_tt_usernames_and_hashes or with_emojis:
         if with_tt_usernames_and_hashes:
             text = re.sub(PRESERVE_USERNAME_AND_HASH_REGEX, convert_func, text)
         if with_emojis:
-            text = re.sub(PRESERVE_EMOJIS_REGEX, convert_func, text)
+            text = emoji.replace_emoji(text, replace=convert_emoji_func)
 
         text = re.sub(ALL_WHITESPACE_REGEX, " ", text)
         text = re.sub(r"^\s+", "", text)
