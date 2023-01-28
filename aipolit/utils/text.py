@@ -1,6 +1,7 @@
 import re
 from collections import OrderedDict
 import random
+import emoji
 
 
 NONE_STRING = 'N/A'
@@ -61,3 +62,38 @@ def read_tsv(fp, header=None):
                     entry[key] = value
                 result.append(entry)
     return result
+
+
+def emojize_case_insensitive(text, language='alias'):
+    """
+    Tries to emojize text trying also case insensitve forms.
+    """
+
+    tokens = re.split(r"(:[a-zA-Z0-9_-]+:)", text)
+    result = []
+    for token in tokens:
+        if len(token) <= 0:
+            continue
+        if token[0] == ":":
+            if re.match(r"^:[a-zA-Z0-9_-]+:$", token):
+                emojized = emoji.emojize(token, language=language)
+                if emojized != token:
+                    result.append(emojized)
+                    continue
+                else:
+                    new_token = ":" + token[1].upper() + token[2:]
+                    emojized = emoji.emojize(new_token, language=language)
+                    if emojized != new_token:
+                        result.append(emojized)
+                        continue
+                    else:
+                        new_token = ":" + token[1:].upper()
+                        emojized = emoji.emojize(new_token, language=language)
+                        if emojized != new_token:
+                            result.append(emojized)
+                            continue
+
+        # could not emojize, probably not emoji
+        result.append(token)
+
+    return "".join(result)
