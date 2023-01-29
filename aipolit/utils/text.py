@@ -111,6 +111,25 @@ def read_tsv(fp, header=None):
     return result
 
 
+def read_txt_list(fp):
+    result = []
+    result_set = set()
+    with open(fp, "r") as f:
+        for line in f:
+            line = line.rstrip()
+            line = re.sub(r"\s+", " ", line)
+            line = re.sub(r"^\s+", " ", line)
+            line = re.sub(r"\s+$", " ", line)
+            if re.match(r"^\s*#.*$", line):
+                continue
+            if re.match(r"^\s*$", line):
+                continue
+            if line not in result_set:
+                result_set.add(line)
+                result.append(line)
+    return result
+
+
 def emojize_case_insensitive(text, language='alias'):
     """
     Tries to emojize text trying also case insensitve forms.

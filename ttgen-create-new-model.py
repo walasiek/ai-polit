@@ -52,7 +52,7 @@ def main():
 
     gen = TweetGenerator(args.name)
 
-    if args.user is None:
+    if args.input is None:
         logging.info("IMPORTANT: You have not provided the input file. This will create 'empty' baseline model")
         gen.train_new_generator([])
     else:
