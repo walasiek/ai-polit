@@ -43,6 +43,53 @@ def string_to_bool(value):
         return None
 
 
+def save_list_as_tsv(fp, data_list, header):
+    """
+    Saves given data_list as TSV file.
+    Assumes that data_list is list of list (each row is equal length as header)
+    """
+    with open(fp, "w") as f:
+        f.write("\t".join(header))
+        f.write("\n")
+        for entry in data_list:
+            assert len(entry) == len(header)
+            entry_str = [str(x) for x in entry]
+            f.write("\t".join(entry_str))
+            f.write("\n")
+
+
+def save_dict_as_tsv(fp, data_dict):
+    """
+    Saves given data_dict as TSV headerless file.
+    """
+    with open(fp, "w") as f:
+        for key, value in data_dict.items():
+            if value is None:
+                value = ''
+            f.write(f"{key}\t{value}\n")
+
+
+def load_dict_from_tsv(fp):
+    """
+    Loads data_dict from TSV headerless file.
+    Assumes this is two column TSV: key<tab>value
+    Returns: OrderedDict
+    """
+    result = OrderedDict()
+
+    with open(fp, "r") as f:
+        for line in f:
+            line = line.rstrip()
+            tokens = line.split('\t')
+            key = tokens[0]
+            if len(tokens) >= 2:
+                value = tokens[1]
+            else:
+                value = ''
+            result[key] = value
+    return result
+
+
 def read_tsv(fp, header=None):
     result = []
     with open(fp, "r") as f:
