@@ -110,6 +110,30 @@ def read_tsv(fp, header=None):
                 result.append(entry)
     return result
 
+def save_tsv(fp, data, header):
+    """
+    Saves data to TSV file assuming that 'data' is list of dicts with keys from 'header'
+    """
+    with open(fp, "w") as f:
+        f.write("\t".join(header))
+        f.write("\n")
+
+        for e in data:
+            row = []
+            for key in header:
+                val = e.get(key, '')
+                val = str(val)
+                row.append(val)
+            f.write("\t".join(row))
+            f.write("\n")
+
+
+def save_txt_list(fp, data):
+    with open(fp, "w") as f:
+        for line in data:
+            f.write(line)
+            f.write("\n")
+
 
 def read_txt_list(fp):
     result = []
