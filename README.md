@@ -13,6 +13,42 @@ To run specific test put path to the test file:
 
     pytest tests/t_preprocessors/test_text_cleaners.py
 
+Scripts
+=======
+
+References to scripts. We use the following naming convention for scripts:
+
+    {TOPIC_PREFIC}-{COMMAND_NAME}.py
+
+Where TOPIC_PREFIX is one of the topics mentioned later in this document (check section *Topics*).
+
+
+Topics
+======
+
+Each topic refers to specific NLP/AI/Analytic task. It can e.g. analytucs
+
+The following topics are handled in this repository:
+- *polittweets* - scripts to analyze political tweets
+- *ttgen* - tweet generation algorithms
+- *utils* - helper scripts and utilities
+
+Topic: polittweets
+==================
+
+TBD
+
+Topic: ttgen
+============
+
+TBD
+
+Topic: utils
+============
+
+TBD
+
+
 Notebooks
 =========
 
