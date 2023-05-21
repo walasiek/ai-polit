@@ -57,10 +57,18 @@ def parse_arguments():
 def create_description(row):
     obwod_number = row['obwod_number']
     perc_val = row['perc_val']
+    perc_rank = int(row['perc_rank'])
     weight = row['weight']
     total_possible_voters = row['total_possible_voters']
+    total_possible_voters_rank = int(row['total_possible_voters_rank'])
+    borders_description = row['borders_description']
 
-    description = f"<b>Nr obwodu</b>: {obwod_number}</br><b>Populacja</b>:{total_possible_voters}</br><b>% wynik:</b> {perc_val}</br><b>WAGA:</b> {weight}"
+    description = f"<b>Nr obwodu</b>: {obwod_number}</br>" + \
+      f"<b>Populacja</b>: {total_possible_voters} (miejsce: {total_possible_voters_rank})</br>" + \
+      f"<b>% wynik:</b> {perc_val}% (miejsce: {perc_rank})</br>" + \
+      f"<b>WAGA:</b> {weight}<br/>" + \
+      f"<b>Granice obwodu:</b> {borders_description}"
+
     return description
 
 def create_marker_size(row):
@@ -80,6 +88,7 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
         location_entry = general_results_data.voting_place_data.location_data.obwod_id_to_location_data[obwod_id]
 
         obwod_number = place_entry['obwod_number']
+        borders_description = place_entry['borders_description']
         total = results_entry['total_valid_votes']
         total_possible_voters = results_entry['total_possible_voters']
 
@@ -98,10 +107,10 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
 
         perc_val = int(10000 * counted / total) / 100
 
-        new_entry = [obwod_id, perc_val, obwod_number, location_entry['latitude'], location_entry['longitude'], total_possible_voters]
+        new_entry = [obwod_id, perc_val, obwod_number, location_entry['latitude'], location_entry['longitude'], total_possible_voters, borders_description]
         raw_data.append(new_entry)
 
-    df = pd.DataFrame(raw_data, columns=['obwod_id', 'perc_val', 'obwod_number', 'latitude', 'longitude', 'total_possible_voters'])
+    df = pd.DataFrame(raw_data, columns=['obwod_id', 'perc_val', 'obwod_number', 'latitude', 'longitude', 'total_possible_voters', 'borders_description'])
 
     min_value = df['perc_val'].min()
     max_value = df['perc_val'].max()
@@ -119,6 +128,8 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
     }
 
     df['weight'] = pd.cut(df['perc_val'], bins=bins, labels=labels, include_lowest=True)
+    df['perc_rank'] = df['perc_val'].rank(ascending=False)
+    df['total_possible_voters_rank'] = df['total_possible_voters'].rank(ascending=False)
 
     df['color'] = df.apply(lambda row: label_to_color[row['weight']], axis=1)
     df['description'] = df.apply(lambda row: create_description(row), axis=1)
@@ -178,7 +189,7 @@ def create_map_cluster(df, out_fp):
     for point in range(0, len(locations)):
         folium.CircleMarker(
             locations[point],
-            popup=folium.Popup(df_text['description'][point]),
+            popup=folium.Popup(df_text['description'][point], max_width=500),
             radius=int(df_marker_size['marker_size'][point]),
             fill=True,
             fill_color=df_color['color'][point],
