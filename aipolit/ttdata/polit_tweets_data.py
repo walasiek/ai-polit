@@ -10,7 +10,7 @@ class PolitTweetsData:
     This class manages tweets from politics.
     """
 
-    TT_USER_NAME_NONE = 'brak'
+    AIPOLIT_USER_NAME_NONE = 'brak'
 
     def __init__(self):
         self.tt_user_name_to_metadata = dict()
@@ -31,7 +31,7 @@ class PolitTweetsData:
             tt_user_name = entry['tt_user_name']
             if not tt_user_name:
                 continue
-            if tt_user_name == self.TT_USER_NAME_NONE:
+            if tt_user_name == self.AIPOLIT_USER_NAME_NONE:
                 continue
             club = entry['club']
             party = entry['party']

@@ -7,7 +7,7 @@ from collections import OrderedDict
 from sklearn.model_selection import train_test_split
 import statistics
 
-from aipolit.utils.globals import TT_TWEET_GENERATORS_ROOT_DIR
+from aipolit.utils.globals import AIPOLIT_TWEET_GENERATORS_ROOT_DIR
 from aipolit.utils.text import save_list_as_tsv, save_dict_as_tsv, read_tsv
 from aipolit.models.text_generator import TextGenerator
 from aipolit.models.sentiment_model import SentimentModel
@@ -18,7 +18,7 @@ from aipolit.models.sentiment_model import SentimentModel
 
 def list_all_generated_models():
     all_model_names = []
-    for filename in sorted(os.listdir(TT_TWEET_GENERATORS_ROOT_DIR)):
+    for filename in sorted(os.listdir(AIPOLIT_TWEET_GENERATORS_ROOT_DIR)):
         matched = re.match(r"^ttgen-(.*)$", filename)
         if matched:
             model_name = matched.group(1)
@@ -50,7 +50,7 @@ class TweetGenerator:
         self.sentiment_model = SentimentModel()
 
     def get_dir(self):
-        return os.path.join(TT_TWEET_GENERATORS_ROOT_DIR, f"ttgen-{self.generator_name}")
+        return os.path.join(AIPOLIT_TWEET_GENERATORS_ROOT_DIR, f"ttgen-{self.generator_name}")
 
     def get_filepath(self, filename):
         return os.path.join(self.get_dir(), filename)
