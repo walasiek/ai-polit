@@ -2,7 +2,7 @@
 
 import argparse
 import logging
-logging.basicConfig(level=logging.DEBUG, format='[%(levelname)s] %(asctime)s\t%(message)s')
+logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(asctime)s\t%(message)s')
 
 from aipolit.sejmvote.voting_place_data import VotingPlaceData
 from aipolit.sejmvote.voting_place_locator import VotingPlaceLocator

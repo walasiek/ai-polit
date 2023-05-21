@@ -5,7 +5,7 @@ from aipolit.utils.globals import \
      AIPOLIT_SEJM_ELECTION_RAW_DATA_DIR, \
      AIPOLIT_SEJM_ELECTION_VOTING_PLACE_RAW_DATA_FP, \
      AIPOLIT_SEJM_ELECTION_VOTING_PLACE_DATA_DIR, \
-     AIPOLIT_SEJM_ELECTION_RAW_DATA_PERCENT_RESULTS_FP
+     AIPOLIT_SEJM_ELECTION_RAW_DATA_GENERAL_RESULTS_FP
 
 import pytest
 import os
@@ -28,7 +28,7 @@ def test_all_data_dirs_exists(data_path):
     "data_fp",
     [
         (AIPOLIT_SEJM_ELECTION_VOTING_PLACE_RAW_DATA_FP),
-        (AIPOLIT_SEJM_ELECTION_RAW_DATA_PERCENT_RESULTS_FP),
+        (AIPOLIT_SEJM_ELECTION_RAW_DATA_GENERAL_RESULTS_FP),
     ])
 def test_all_data_files_exists(data_fp):
     assert os.path.isfile(data_fp), f"File {data_fp} not exists. Please check aipolit.utils.globals for instruction how to create a file"

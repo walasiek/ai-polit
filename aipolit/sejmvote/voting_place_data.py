@@ -68,6 +68,33 @@ class VotingPlaceData:
         index = self.obwod_id_to_index[obwod_id]
         return self.voting_place_data[index]
 
+    def get_obwod_ids_matching_criteria(self, city=None, sejm_okreg_number=None, with_location_data=True, min_population=None):
+        result = []
+        for entry in self.voting_place_data:
+            if city:
+                if entry['city'] != city:
+                    continue
+            if sejm_okreg_number:
+                if entry['sejm_okreg_number'] != sejm_okreg_number:
+                    continue
+            if with_location_data:
+                if entry['obwod_id'] not in self.location_data.obwod_id_to_location_data:
+                    continue
+
+                location_data = self.location_data.obwod_id_to_location_data[entry['obwod_id']]
+                skip_this = False
+                for k in ['latitude', 'longitude']:
+                    if location_data[k] is None:
+                        skip_this = True
+                if skip_this:
+                    continue
+            if min_population:
+                if min_population > entry['population']:
+                    continue
+
+            result.append(entry['obwod_id'])
+        return result
+
     def _load_from_raw(self):
         fp = AIPOLIT_SEJM_ELECTION_VOTING_PLACE_RAW_DATA_FP
         logging.info("Load raw data from the file: %s", fp)
