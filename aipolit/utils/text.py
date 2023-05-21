@@ -1,4 +1,5 @@
 import re
+import csv
 from collections import OrderedDict
 import random
 import emoji
@@ -187,3 +188,27 @@ def emojize_case_insensitive(text, language='alias'):
         result.append(token)
 
     return "".join(result)
+
+
+def read_csv(fp, delimiter=';', quotechar='"'):
+    """
+    Returns list of rows.
+    Each row is Ordered dict: key -> value
+    Assumes that first row is a header.
+    """
+    data = []
+    with open(fp, "r") as f:
+        reader = csv.reader(f, delimiter=';', quotechar='"')
+        firstrow = None
+        for row in reader:
+            if not firstrow:
+                firstrow = row
+            else:
+                entry = OrderedDict()
+                for i, key in enumerate(firstrow):
+                    val = None
+                    if i < len(row):
+                        val = row[i]
+                    entry[key] = val
+                data.append(entry)
+    return data

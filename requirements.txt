@@ -12,3 +12,5 @@ shap
 emoji
 torch
 sentimentpl
+geopy
+geopandas

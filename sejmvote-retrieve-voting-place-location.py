@@ -1,0 +1,82 @@
+#!/usr/bin/env python3
+
+import argparse
+import logging
+logging.basicConfig(level=logging.DEBUG, format='[%(levelname)s] %(asctime)s\t%(message)s')
+
+from aipolit.sejmvote.voting_place_data import VotingPlaceData
+from aipolit.sejmvote.voting_place_locator import VotingPlaceLocator
+
+
+def parse_arguments():
+    """parse command line arguments"""
+    parser = argparse.ArgumentParser(
+        description='Tries to load langitude and latitude for voting place'
+    )
+
+    parser.add_argument(
+        '--okreg', '-o',
+        default='13',
+        help='Limit query only to data from the given sejm okreg')
+
+    parser.add_argument(
+        '--city', '-c',
+        default='Kraków',
+        help='Limit query only to data from the given city')
+
+    parser.add_argument(
+        '--limit', '-l',
+        type=int,
+        help='Limit number of voting places processed')
+
+    args = parser.parse_args()
+
+    return args
+
+
+def process_data(data, obwod_id_to_process):
+    voting_place_locator = VotingPlaceLocator()
+
+    found_location = 0
+    for obwod_id in obwod_id_to_process:
+        entry = data.get_voting_place_by_id(obwod_id)
+        location_result = voting_place_locator.query(entry)
+        if location_result[0] is not None:
+            found_location += 1
+
+        data.location_data.add_location_data(obwod_id, location_result[0], location_result[1])
+
+    logging.info("We found %i locations out of %i", found_location, len(obwod_id_to_process))
+    data.location_data.save_data()
+
+
+def create_obwod_ids_to_process(data, args):
+    result = []
+    for entry in data.voting_place_data:
+        if args.city:
+            if entry['city'] != args.city:
+                continue
+        if args.okreg:
+            if entry['sejm_okreg_number'] != args.okreg:
+                continue
+
+        if args.limit:
+            if len(result) >= args.limit:
+                break
+        # TODO exclude already queried
+        obwod_id = entry['obwod_id']
+        if obwod_id in data.location_data.obwod_id_to_location_data:
+            continue
+
+        result.append(obwod_id)
+    logging.info("We have %i obwod to query", len(result))
+    return result
+
+def main():
+    args = parse_arguments()
+
+    data = VotingPlaceData.get_instance()
+    obwod_id_to_process = create_obwod_ids_to_process(data, args)
+    process_data(data, obwod_id_to_process)
+
+main()

@@ -29,9 +29,25 @@ Topics
 Each topic refers to specific NLP/AI/Analytic task. It can e.g. analytucs
 
 The following topics are handled in this repository:
+- *sejmvote* - scripts to analyze results from Sejm Elections
 - *polittweets* - scripts to analyze political tweets
 - *ttgen* - tweet generation algorithms
 - *utils* - helper scripts and utilities
+
+Topic: sejmvote
+===============
+
+You will need to download some data first.
+Please check aipolit.utils.globals for the files which need to be prepared
+(they are described in comments).
+
+sejmvote-retrieve-voting-place-location.py
+------------------------------------------
+
+Use this script to retrieve latitude and longitude of the voting places.
+The data is saved on the disc, so you will need to retrieve them only once
+to use in other analytic tasks.
+
 
 Topic: polittweets
 ==================
