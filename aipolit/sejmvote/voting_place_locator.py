@@ -1,5 +1,6 @@
 from geopy.geocoders import Nominatim
 import re
+import logging
 
 
 class VotingPlaceLocator:

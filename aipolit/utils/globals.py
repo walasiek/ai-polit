@@ -14,6 +14,12 @@ AIPOLIT_SEJM_ELECTION_DATA_DIR = os.path.join(AIPOLIT_DATA_DIR, 'sejm2019-electi
 # unzip the file
 AIPOLIT_SEJM_ELECTION_RAW_DATA_DIR = os.path.join(AIPOLIT_SEJM_ELECTION_DATA_DIR, 'raw-results')
 
+# Here you should download raw data from election voting results
+# https://sejmsenat2019.pkw.gov.pl/sejmsenat2019/pl/dane_w_arkuszach
+# Wyniki głosowania na listy Sejmowe -> po obwodach -> CSV
+# unzip the file
+AIPOLIT_SEJM_ELECTION_RAW_DATA_PERCENT_RESULTS_FP = os.path.join(AIPOLIT_SEJM_ELECTION_RAW_DATA_DIR, 'wyniki_gl_na_listy_po_obwodach_sejm.csv')
+
 # Here will be placed data of each voting place
 AIPOLIT_SEJM_ELECTION_VOTING_PLACE_DATA_DIR = os.path.join(AIPOLIT_SEJM_ELECTION_DATA_DIR, 'voting-place')
 

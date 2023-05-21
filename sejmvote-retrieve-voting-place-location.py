@@ -38,7 +38,8 @@ def process_data(data, obwod_id_to_process):
     voting_place_locator = VotingPlaceLocator()
 
     found_location = 0
-    for obwod_id in obwod_id_to_process:
+    for i, obwod_id in enumerate(obwod_id_to_process):
+        logging.info("Query location %s (%i out of %i)", obwod_id, i + 1, len(obwod_id_to_process))
         entry = data.get_voting_place_by_id(obwod_id)
         location_result = voting_place_locator.query(entry)
         if location_result[0] is not None:

@@ -41,6 +41,8 @@ class VotingPlaceLocationData:
                 for k, v in raw_entry.items():
                     if v == NONE_STRING:
                         v = None
+                    elif v is None:
+                        v = None
                     elif k in self.FLOAT_COLUMNS:
                         v = float(v)
                     entry[k] = v
