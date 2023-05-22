@@ -1,6 +1,6 @@
 import logging
 import os
-from collections import OrderedDict
+from collections import OrderedDict, Counter
 from aipolit.utils.text import read_tsv, NONE_STRING
 from aipolit.utils.globals import \
      AIPOLIT_SEJM_ELECTION_VOTING_PLACE_DATA_DIR
@@ -24,12 +24,55 @@ class VotingPlaceLocationData:
             cls.FILENAME)
         return fp
 
-    def add_location_data(self, obwod_id, latitude, longitude):
+    @classmethod
+    def create_empty_entry(cls):
         entry = OrderedDict()
+        entry['obwod_id'] = None
+        entry['latitude'] = None
+        entry['longitude'] = None
+        entry['duplicate_count'] = None
+        entry['duplicate_index'] = None
+        return entry
+
+    def add_location_data(self, obwod_id, latitude, longitude):
+        entry = self.create_empty_entry()
         entry['obwod_id'] = obwod_id
         entry['latitude'] = latitude
         entry['longitude'] = longitude
+
         self.obwod_id_to_location_data[obwod_id] = entry
+
+    def deduplicate_coordinates(self, obwod_id, delta=0.001):
+        entry = self.obwod_id_to_location_data[obwod_id]
+
+        latitude = entry['latitude']
+        longitude = entry['longitude']
+
+        if entry['duplicate_count'] is None or entry['duplicate_index'] is None:
+            raise Exception(f"Implementation error: duplicate_count or duplicate_index are not defined for {obwod_id}. Function reload_duplicate_location_resolver should be run first!")
+
+        duplicate_index = entry['duplicate_index']
+        duplicate_count = entry['duplicate_count']
+
+        delta_x = int(duplicate_index / 3)
+        delta_y = duplicate_index % 3
+
+        return (latitude + delta_x * delta, longitude + delta_y * delta)
+
+    def reload_duplicate_location_resolver(self):
+        """
+        Should be loaded to resolve duplicate location for map generation
+        Recommended to use after any data manipulation (add, load)
+        """
+        duplicate_count = Counter()
+        for obwod_id, entry in self.obwod_id_to_location_data.items():
+            location_hash = (entry['latitude'],  entry['longitude'])
+            entry['duplicate_index'] = duplicate_count[location_hash]
+            duplicate_count[location_hash] += 1
+
+        for obwod_id, entry in self.obwod_id_to_location_data.items():
+            location_hash = (entry['latitude'],  entry['longitude'])
+            entry['duplicate_count'] = duplicate_count[location_hash]
 
     def load_data(self):
         fp = self.get_data_fp()
@@ -37,7 +80,7 @@ class VotingPlaceLocationData:
         if os.path.isfile(fp):
             data = read_tsv(fp)
             for raw_entry in data:
-                entry = OrderedDict()
+                entry = self.create_empty_entry()
                 for k, v in raw_entry.items():
                     if v == NONE_STRING:
                         v = None
@@ -47,6 +90,8 @@ class VotingPlaceLocationData:
                         v = float(v)
                     entry[k] = v
                 self.obwod_id_to_location_data[entry['obwod_id']] = entry
+
+        self.reload_duplicate_location_resolver()
         logging.info("Loaded %i VotingPlaceLocationData", len(self.obwod_id_to_location_data))
 
     def save_data(self):

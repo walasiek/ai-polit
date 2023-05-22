@@ -16,12 +16,10 @@ def parse_arguments():
 
     parser.add_argument(
         '--okreg', '-o',
-        default='13',
         help='Limit query only to data from the given sejm okreg')
 
     parser.add_argument(
         '--city', '-c',
-        default='Kraków',
         help='Limit query only to data from the given city')
 
     parser.add_argument(

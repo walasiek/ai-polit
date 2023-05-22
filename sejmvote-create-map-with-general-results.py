@@ -38,7 +38,7 @@ def parse_arguments():
     parser.add_argument(
         '--val-key', '-vk',
         required=True,
-        choices=['opozycja', 'konfederacja', 'pis'],
+        choices=['opozycja', 'konfederacja', 'pis', 'ko', 'psl', 'sld'],
         help='Defines what should be taken into account to count value displayed on map')
 
     parser.add_argument(
@@ -51,11 +51,17 @@ def parse_arguments():
         type=int,
         help='If set, then leaves only LOWEST N values')
 
+    parser.add_argument(
+        '--map-type', '-mt',
+        choices=['clustered', 'normal'],
+        default='normal',
+        help='Type of map to create: clustered or normal (default)')
+
     args = parser.parse_args()
 
     return args
 
-def create_description(row):
+def create_description(row, party):
     obwod_number = row['obwod_number']
     perc_val = row['perc_val']
     perc_rank = int(row['perc_rank'])
@@ -63,8 +69,15 @@ def create_description(row):
     total_possible_voters = row['total_possible_voters']
     total_possible_voters_rank = int(row['total_possible_voters_rank'])
     borders_description = row['borders_description']
+    number_of_obwods_in_same_place = row['number_of_obwods_in_same_place']
+    location_name = row['location_name']
+    city = row['city']
 
-    description = f"<b>Nr obwodu</b>: {obwod_number}</br>" + \
+    description = \
+      f"<b>POPARCIE DLA {party}</b></br>" + \
+      f"<b>Nr obwodu</b>: {obwod_number}</br>" + \
+      f"<b>Siedziba:</b> {location_name} ({city})</br>" + \
+      f"<b>Liczba obwodów w tej samej siedzibie</b>: {number_of_obwods_in_same_place}</br>" + \
       f"<b>Populacja</b>: {total_possible_voters} (miejsce: {total_possible_voters_rank})</br>" + \
       f"<b>% wynik:</b> {perc_val}% (miejsce: {perc_rank})</br>" + \
       f"<b>WAGA:</b> {weight}<br/>" + \
@@ -74,12 +87,14 @@ def create_description(row):
 
 def create_marker_size(row):
     population = row['total_possible_voters']
+    max_size = 30
+    min_size = 8
     if population > 2000:
-        return 60
+        return max_size
     elif population > 200:
-        return 12 + int((population - 200) /50)
+        return min_size + int( ( (population - 200) / 1800) * (max_size - min_size))
     else:
-        return 10
+        return min_size
 
 def create_data_for_map(obwod_ids, general_results_data, val_key):
     raw_data = []
@@ -88,10 +103,15 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
         place_entry = general_results_data.voting_place_data.get_voting_place_by_id(obwod_id)
         location_entry = general_results_data.voting_place_data.location_data.obwod_id_to_location_data[obwod_id]
 
+        location_deduplicated = general_results_data.voting_place_data.location_data.deduplicate_coordinates(obwod_id)
+
         obwod_number = place_entry['obwod_number']
         borders_description = place_entry['borders_description']
         total = results_entry['total_valid_votes']
         total_possible_voters = results_entry['total_possible_voters']
+        number_of_obwods_in_same_place = location_entry['duplicate_count']
+        location_name = place_entry['location_name']
+        city = place_entry['city']
 
         # opozycja
         counted = 0
@@ -103,15 +123,43 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
             counted = results_entry['total_votes_lista_konfederacja']
         elif val_key == 'pis':
             counted = results_entry['total_votes_lista_pis']
+        elif val_key == 'ko':
+            counted = results_entry['total_votes_lista_ko']
+        elif val_key == 'psl':
+            counted = results_entry['total_votes_lista_psl']
+        elif val_key == 'sld':
+            counted = results_entry['total_votes_lista_sld']
         else:
             raise Exception(f"Unknown val_key = {val_key}")
 
         perc_val = int(10000 * counted / total) / 100
 
-        new_entry = [obwod_id, perc_val, obwod_number, location_entry['latitude'], location_entry['longitude'], total_possible_voters, borders_description]
+        new_entry = [
+            obwod_id,
+            perc_val,
+            obwod_number,
+            location_deduplicated[0],
+            location_deduplicated[1],
+            total_possible_voters,
+            borders_description,
+            number_of_obwods_in_same_place,
+            location_name,
+            city]
         raw_data.append(new_entry)
 
-    df = pd.DataFrame(raw_data, columns=['obwod_id', 'perc_val', 'obwod_number', 'latitude', 'longitude', 'total_possible_voters', 'borders_description'])
+    df = pd.DataFrame(
+        raw_data,
+        columns=[
+            'obwod_id',
+            'perc_val',
+            'obwod_number',
+            'latitude',
+            'longitude',
+            'total_possible_voters',
+            'borders_description',
+            'number_of_obwods_in_same_place',
+            'location_name',
+            'city'])
 
     min_value = df['perc_val'].min()
     max_value = df['perc_val'].max()
@@ -133,7 +181,7 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
     df['total_possible_voters_rank'] = df['total_possible_voters'].rank(ascending=False)
 
     df['color'] = df.apply(lambda row: label_to_color[row['weight']], axis=1)
-    df['description'] = df.apply(lambda row: create_description(row), axis=1)
+    df['description'] = df.apply(lambda row: create_description(row, val_key), axis=1)
     df['marker_size'] = df.apply(lambda row: create_marker_size(row), axis=1)
     return df
 
@@ -150,21 +198,25 @@ def preprocess_data_for_map(data_for_map, args):
 
     return data_for_map
 
-def create_map_old(df, out_fp):
-
+def create_map_normal(df, out_fp):
     map1 = folium.Map(
         location=[df.head(1).latitude, df.head(1).longitude],
         tiles='cartodbpositron',
-        zoom_start=12,)
+        zoom_start=12,
+        control_scale=True)
 
     df.apply(
         lambda row:
         folium.CircleMarker(
             location=[row["latitude"], row["longitude"]],
-            popup=folium.Popup(row['description']),
-            radius=10,
+            popup=folium.Popup(
+                row['description'],
+                max_width=500),
+            radius=row['marker_size'],
             fill=True,
+            color=row['color'],
             fill_color=row['color'],
+            fill_opacity=0.9,
             ).add_to(map1), axis=1)
 
     map1.save(outfile=out_fp)
@@ -214,6 +266,12 @@ def main():
     data_for_map = create_data_for_map(obwod_ids, general_results_data, args.val_key)
 
     data_for_map = preprocess_data_for_map(data_for_map, args)
-    create_map_cluster(data_for_map, args.output)
+    if args.map_type == 'clustered':
+        create_map_cluster(data_for_map, args.output)
+    elif args.map_type == 'normal':
+        create_map_normal(data_for_map, args.output)
+    else:
+        raise Exception(f"Unknown map type in args {args.map_type}")
+
 
 main()
