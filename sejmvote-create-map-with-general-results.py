@@ -10,6 +10,7 @@ from folium.plugins import FastMarkerCluster, MarkerCluster
 import pandas as pd
 import numpy as np
 from aipolit.sejmvote.voting_sejm_general_results import VotingSejmGeneralResults
+from aipolit.sejmvote.voting_sejm_candidate_results import VotingSejmCandidateResults
 
 
 def parse_arguments():
@@ -44,7 +45,7 @@ def parse_arguments():
     parser.add_argument(
         '--cand-index', '-ci',
         type=int,
-        help='If set, then takes only votes on candidate number cand-index (starting from 1) from the given list')
+        help='If set, then takes only votes on candidate number cand-index (starting from 0!) from the given list')
 
     parser.add_argument(
         '--topn',
@@ -84,9 +85,24 @@ def create_description(row, party):
     freq_vote_rank = int(row['freq_vote_rank'])
     counted_votes = row['counted_votes']
     counted_votes_rank = int(row['counted_votes_rank'])
+    cand_index = row['cand_index']
+    candidate_name = row['candidate_name']
 
-    description = \
-      f"<b>POPARCIE DLA {party}</b></br>" + \
+
+    description = ''
+
+    if candidate_name:
+        description +=  f"<b>POPARCIE DLA {candidate_name} z listy {party}</b></br>"
+    else:
+        description +=  f"<b>POPARCIE DLA {party}</b></br>"
+
+    for_whom_votes = ''
+    if candidate_name:
+        for_whom_votes = candidate_name
+    else:
+        for_whom_votes = f"lista {party}"
+
+    description += \
       f"<b>Nr obwodu</b>: {obwod_number}</br>" + \
       f"<b>Siedziba:</b> {location_name} ({city})</br>" + \
       f"<b>Powiat / gmina:</b> {powiat_name} / {gmina_name}</br>" + \
@@ -94,7 +110,7 @@ def create_description(row, party):
       f"<b>Populacja</b>: {total_possible_voters} (miejsce: {total_possible_voters_rank})</br>" + \
       f"<b>Ważnych głosów (ogółem)</b>: {total_valid_votes}</br>" + \
       f"<b>Frekwencja</b>: {freq_vote}% (miejsce: {freq_vote_rank})</br>" + \
-      f"<b>Głosów na {party}</b>: {counted_votes} (miejsce: {counted_votes_rank})</br>" + \
+      f"<b>Głosów na {for_whom_votes}</b>: {counted_votes} (miejsce: {counted_votes_rank})</br>" + \
       f"<b>% wynik:</b> {perc_val}% (miejsce: {perc_rank})</br>" + \
       f"<b>WAGA:</b> {weight}<br/>" + \
       f"<b>Granice obwodu:</b> {borders_description}"
@@ -112,10 +128,37 @@ def create_marker_size(row):
     else:
         return min_size
 
-def create_data_for_map(obwod_ids, general_results_data, val_key):
+def create_counted_value(val_key, general_results_entry, candidate_results_data, cand_index, obwod_id):
+
+    if cand_index is not None:
+        return candidate_results_data.get_candidate_result(obwod_id, val_key, cand_index)
+
+    counted = 0
+    if val_key == 'opozycja':
+        counted = general_results_entry['total_votes_lista_ko'] \
+          + general_results_entry['total_votes_lista_psl'] \
+          + general_results_entry['total_votes_lista_sld']
+    elif val_key == 'konfederacja':
+        counted = general_results_entry['total_votes_lista_konfederacja']
+    elif val_key == 'pis':
+        counted = general_results_entry['total_votes_lista_pis']
+    elif val_key == 'ko':
+        counted = general_results_entry['total_votes_lista_ko']
+    elif val_key == 'psl':
+        counted = general_results_entry['total_votes_lista_psl']
+    elif val_key == 'sld':
+        counted = general_results_entry['total_votes_lista_sld']
+    else:
+        raise Exception(f"Unknown val_key = {val_key}")
+
+    return counted
+
+
+def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, candidate_results_data):
     raw_data = []
     for obwod_id in obwod_ids:
         results_entry = general_results_data.get_results_entry_by_obwod_id(obwod_id)
+
         place_entry = general_results_data.voting_place_data.get_voting_place_by_id(obwod_id)
         location_entry = general_results_data.voting_place_data.location_data.obwod_id_to_location_data[obwod_id]
 
@@ -130,25 +173,11 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
         city = place_entry['city']
         powiat_name = place_entry['powiat_name']
         gmina_name = place_entry['gmina_name']
+        candidate_name = None
+        if cand_index is not None:
+            candidate_name = candidate_results_data.get_candidate_name(val_key, cand_index)
 
-        # opozycja
-        counted = 0
-        if val_key == 'opozycja':
-            counted = results_entry['total_votes_lista_ko'] \
-              + results_entry['total_votes_lista_psl'] \
-              + results_entry['total_votes_lista_sld']
-        elif val_key == 'konfederacja':
-            counted = results_entry['total_votes_lista_konfederacja']
-        elif val_key == 'pis':
-            counted = results_entry['total_votes_lista_pis']
-        elif val_key == 'ko':
-            counted = results_entry['total_votes_lista_ko']
-        elif val_key == 'psl':
-            counted = results_entry['total_votes_lista_psl']
-        elif val_key == 'sld':
-            counted = results_entry['total_votes_lista_sld']
-        else:
-            raise Exception(f"Unknown val_key = {val_key}")
+        counted = create_counted_value(val_key, results_entry, candidate_results_data, cand_index, obwod_id)
 
         perc_val = int(10000 * counted / total) / 100
 
@@ -169,7 +198,9 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
             gmina_name,
             counted,
             total,
-            freq_vote]
+            freq_vote,
+            cand_index,
+            candidate_name]
         raw_data.append(new_entry)
 
     df = pd.DataFrame(
@@ -189,7 +220,9 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
             'gmina_name',
             'counted_votes',
             'total_valid_votes',
-            'freq_vote'])
+            'freq_vote',
+            'cand_index',
+            'candidate_name'])
 
     min_value = df['perc_val'].min()
     max_value = df['perc_val'].max()
@@ -306,6 +339,15 @@ def create_map_cluster(df, out_fp):
 def main():
     args = parse_arguments()
     general_results_data = VotingSejmGeneralResults()
+    candidate_results_data = None
+    if args.cand_index is not None:
+        if args.okreg is None:
+            raise Exception("Cant use --cand-index param if --okreg is not defined!")
+
+        candidate_results_data = VotingSejmCandidateResults(okreg_no=args.okreg)
+        if args.val_key not in candidate_results_data.lista_id_to_candidate_names:
+            raise Exception("Cant use --val_key which is not one party on the list (do not use merged vals like: opozycja)!")
+
     obwod_ids = general_results_data.voting_place_data.get_obwod_ids_matching_criteria(
         city=args.city,
         sejm_okreg_number=args.okreg,
@@ -313,7 +355,7 @@ def main():
         min_population=300)
 
     logging.info("We have %i obwod IDS available to show on MAP", len(obwod_ids))
-    data_for_map = create_data_for_map(obwod_ids, general_results_data, args.val_key)
+    data_for_map = create_data_for_map(obwod_ids, general_results_data, args.val_key, args.cand_index, candidate_results_data)
 
     data_for_map = preprocess_data_for_map(data_for_map, args)
     if args.map_type == 'clustered':

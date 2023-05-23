@@ -15,6 +15,8 @@ def test_simple_check():
     assert candidate_results.lista_id_to_candidate_names['sld'][27] == 'Tomasz Marek LEŚNIAK'
     assert candidate_results.lista_id_to_candidate_names['konfederacja'][22] == 'Janina PĘCZEK'
 
+    assert candidate_results.get_candidate_name('ko', 11) == 'Władysław Andrzej DYNA'
+
     # some random values to check
     obwod_id = '120601===1'   # source: https://sejmsenat2019.pkw.gov.pl/sejmsenat2019/pl/wyniki/protokol/sejm/546450
     results_entry = candidate_results.get_results_entry_by_obwod_id(obwod_id)
@@ -22,3 +24,6 @@ def test_simple_check():
     assert results_entry['total_votes_lista_psl_cand_1'] == 6
     assert results_entry['total_votes_lista_psl_cand_2'] == 15
     assert results_entry['total_votes_lista_pis_cand_27'] == 14
+
+    assert candidate_results.get_candidate_result(obwod_id, 'psl', 0) == 47
+    assert candidate_results.get_candidate_result(obwod_id, 'psl', 1) == 6

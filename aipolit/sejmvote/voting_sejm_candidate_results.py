@@ -53,11 +53,22 @@ class VotingSejmCandidateResults:
             cls.INSTANCE[okreg_no] = VotingSejmCandidateResults(okreg_no)
         return cls.INSTANCE[okreg_no]
 
+    @classmethod
+    def create_result_key(cls, lista_id, cand_index):
+        return f"total_votes_lista_{lista_id}_cand_{cand_index}"
+
     def get_results_entry_by_obwod_id(self, obwod_id):
         if obwod_id in self.obwod_id_to_index:
             i = self.obwod_id_to_index[obwod_id]
             return self.results_data[i]
         return None
+
+    def get_candidate_result(self, obwod_id, lista_id, cand_index):
+        obwod_results = self.get_results_entry_by_obwod_id(obwod_id)
+        return obwod_results[self.create_result_key(lista_id, cand_index)]
+
+    def get_candidate_name(self, lista_id, cand_index):
+        return self.lista_id_to_candidate_names[lista_id][cand_index]
 
     def get_filename(self):
         return f"wyniki_gl_na_kand_po_obwodach_sejm_okr_{self.okreg_no}.csv"
@@ -77,7 +88,7 @@ class VotingSejmCandidateResults:
             for key, value in row.items():
                 if key in self.row_header_to_lista_id_and_cand_id:
                     lista_id, cand_index = self.row_header_to_lista_id_and_cand_id[key]
-                    entry_key = f"total_votes_lista_{lista_id}_cand_{cand_index}"
+                    entry_key = self.create_result_key(lista_id, cand_index)
                     if value == '-':
                         value = 0
                     parsed_entry[entry_key] = int(value)
