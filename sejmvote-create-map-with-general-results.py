@@ -42,6 +42,11 @@ def parse_arguments():
         help='Defines what should be taken into account to count value displayed on map')
 
     parser.add_argument(
+        '--cand-index', '-ci',
+        type=int,
+        help='If set, then takes only votes on candidate number cand-index (starting from 1) from the given list')
+
+    parser.add_argument(
         '--topn',
         type=int,
         help='If set, then leaves only TOP N values')
@@ -72,13 +77,24 @@ def create_description(row, party):
     number_of_obwods_in_same_place = row['number_of_obwods_in_same_place']
     location_name = row['location_name']
     city = row['city']
+    powiat_name = row['powiat_name']
+    gmina_name = row['gmina_name']
+    total_valid_votes = row['total_valid_votes']
+    freq_vote = row['freq_vote']
+    freq_vote_rank = int(row['freq_vote_rank'])
+    counted_votes = row['counted_votes']
+    counted_votes_rank = int(row['counted_votes_rank'])
 
     description = \
       f"<b>POPARCIE DLA {party}</b></br>" + \
       f"<b>Nr obwodu</b>: {obwod_number}</br>" + \
       f"<b>Siedziba:</b> {location_name} ({city})</br>" + \
+      f"<b>Powiat / gmina:</b> {powiat_name} / {gmina_name}</br>" + \
       f"<b>Liczba obwodów w tej samej siedzibie</b>: {number_of_obwods_in_same_place}</br>" + \
       f"<b>Populacja</b>: {total_possible_voters} (miejsce: {total_possible_voters_rank})</br>" + \
+      f"<b>Ważnych głosów (ogółem)</b>: {total_valid_votes}</br>" + \
+      f"<b>Frekwencja</b>: {freq_vote}% (miejsce: {freq_vote_rank})</br>" + \
+      f"<b>Głosów na {party}</b>: {counted_votes} (miejsce: {counted_votes_rank})</br>" + \
       f"<b>% wynik:</b> {perc_val}% (miejsce: {perc_rank})</br>" + \
       f"<b>WAGA:</b> {weight}<br/>" + \
       f"<b>Granice obwodu:</b> {borders_description}"
@@ -112,6 +128,8 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
         number_of_obwods_in_same_place = location_entry['duplicate_count']
         location_name = place_entry['location_name']
         city = place_entry['city']
+        powiat_name = place_entry['powiat_name']
+        gmina_name = place_entry['gmina_name']
 
         # opozycja
         counted = 0
@@ -134,6 +152,8 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
 
         perc_val = int(10000 * counted / total) / 100
 
+        freq_vote = int(10000 * total / total_possible_voters) / 100
+
         new_entry = [
             obwod_id,
             perc_val,
@@ -144,7 +164,12 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
             borders_description,
             number_of_obwods_in_same_place,
             location_name,
-            city]
+            city,
+            powiat_name,
+            gmina_name,
+            counted,
+            total,
+            freq_vote]
         raw_data.append(new_entry)
 
     df = pd.DataFrame(
@@ -159,25 +184,50 @@ def create_data_for_map(obwod_ids, general_results_data, val_key):
             'borders_description',
             'number_of_obwods_in_same_place',
             'location_name',
-            'city'])
+            'city',
+            'powiat_name',
+            'gmina_name',
+            'counted_votes',
+            'total_valid_votes',
+            'freq_vote'])
 
     min_value = df['perc_val'].min()
     max_value = df['perc_val'].max()
 
-    bins = np.linspace(min_value, max_value, 6)
 
-    labels = ['b_mało', 'mało', 'średnio', 'dużo', 'b_dużo']
+#    labels = ['b_mało', 'mało', 'średnio', 'dużo', 'b_dużo']
+    labels = ['bb_słabiutko', 'b_słabiutko', 'słabiutko', 'słabo-', 'słabo', 'średnio-', 'średnio', 'średnio+', 'sporo', 'sporo+', 'wysoko', 'b_wysoko', 'bb_wysoko']
+    bins = np.linspace(min_value, max_value, len(labels) + 1)
+
 
     label_to_color = {
-        'b_mało': '#f60404',
-        'mało': '#f87b05',
-        'średnio': '#f8e604',
-        'dużo': '#d4ff32',
-        'b_dużo': '#089000',
+        'bb_słabiutko': '#ab0000',
+        'b_słabiutko': '#c23e00',
+        'słabiutko': '#d66500',
+        'słabo-': '#e58b00',
+        'słabo': '#efb200',
+        'średnio-': '#f4d800',
+        'średnio': '#f3ff00',
+        'średnio+': '#cae800',
+        'sporo': '#a3d000',
+        'sporo+': '#7eb800',
+        'wysoko': '#5ca000',
+        'b_wysoko': '#398800',
+        'bb_wysoko': '#117000',
     }
+
+    #label_to_color = {
+    #    'b_mało': '#f60404',
+    #    'mało': '#f87b05',
+    #    'średnio': '#f8e604',
+    #    'dużo': '#d4ff32',
+    #    'b_dużo': '#089000',
+    #}
 
     df['weight'] = pd.cut(df['perc_val'], bins=bins, labels=labels, include_lowest=True)
     df['perc_rank'] = df['perc_val'].rank(ascending=False)
+    df['freq_vote_rank'] = df['freq_vote'].rank(ascending=False)
+    df['counted_votes_rank'] = df['counted_votes'].rank(ascending=False)
     df['total_possible_voters_rank'] = df['total_possible_voters'].rank(ascending=False)
 
     df['color'] = df.apply(lambda row: label_to_color[row['weight']], axis=1)
