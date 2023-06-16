@@ -37,6 +37,12 @@ def parse_arguments():
         help='Limit query only to data from the given city')
 
     parser.add_argument(
+        '--powiat', '-p',
+        default=None,
+#        default='Kraków',
+        help='Limit query only to data from the given powiat name')
+
+    parser.add_argument(
         '--val-key', '-vk',
         required=True,
         choices=['opozycja', 'konfederacja', 'pis', 'ko', 'psl', 'sld', 'frekwencja'],
@@ -357,7 +363,8 @@ def main():
         city=args.city,
         sejm_okreg_number=args.okreg,
         with_location_data=True,
-        min_population=300)
+        min_population=300,
+        powiat_name=args.powiat)
 
     logging.info("We have %i obwod IDS available to show on MAP", len(obwod_ids))
     data_for_map = create_data_for_map(obwod_ids, general_results_data, args.val_key, args.cand_index, candidate_results_data)

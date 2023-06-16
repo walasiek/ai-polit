@@ -68,11 +68,14 @@ class VotingPlaceData:
         index = self.obwod_id_to_index[obwod_id]
         return self.voting_place_data[index]
 
-    def get_obwod_ids_matching_criteria(self, city=None, sejm_okreg_number=None, with_location_data=True, min_population=None):
+    def get_obwod_ids_matching_criteria(self, city=None, sejm_okreg_number=None, with_location_data=True, min_population=None, powiat_name=None):
         result = []
         for entry in self.voting_place_data:
             if city:
                 if entry['city'] != city:
+                    continue
+            if powiat_name:
+                if entry['powiat_name'] != powiat_name:
                     continue
             if sejm_okreg_number:
                 if entry['sejm_okreg_number'] != sejm_okreg_number:
