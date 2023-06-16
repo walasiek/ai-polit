@@ -108,6 +108,8 @@ def create_description(row, party):
     else:
         for_whom_votes = f"lista {party}"
 
+    norm_val_round = int(row['norm_val'] * 100)
+
     description += \
       f"<b>Nr obwodu</b>: {obwod_number}</br>" + \
       f"<b>Siedziba:</b> {location_name} ({city})</br>" + \
@@ -118,7 +120,7 @@ def create_description(row, party):
       f"<b>Frekwencja</b>: {freq_vote}% (miejsce: {freq_vote_rank})</br>" + \
       f"<b>Głosów na {for_whom_votes}</b>: {counted_votes} (miejsce: {counted_votes_rank})</br>" + \
       f"<b>% wynik:</b> {perc_val}% (miejsce: {perc_rank})</br>" + \
-      f"<b>WAGA:</b> {weight}<br/>" + \
+      f"<b>WAGA:</b> {weight} (znormalizowana ocena: {norm_val_round})<br/>" + \
       f"<b>Granice obwodu:</b> {borders_description}"
 
     return description
@@ -237,7 +239,7 @@ def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, ca
 
     min_value = df['perc_val'].min()
     max_value = df['perc_val'].max()
-
+    df['norm_val'] = (df['perc_val'] - min_value) / (max_value - min_value)
 
 #    labels = ['b_mało', 'mało', 'średnio', 'dużo', 'b_dużo']
     labels = ['bb_słabiutko', 'b_słabiutko', 'słabiutko', 'słabo-', 'słabo', 'średnio-', 'średnio', 'średnio+', 'sporo', 'sporo+', 'wysoko', 'b_wysoko', 'bb_wysoko']
