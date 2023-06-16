@@ -103,6 +103,13 @@ class VotingSejmGeneralResults:
 
             obwod_id = self.voting_place_data.create_id_from_entry(parsed_entry)
             parsed_entry['obwod_id'] = obwod_id
+            # add frekwencja
+            total = parsed_entry['total_valid_votes']
+            total_possible_voters = parsed_entry['total_possible_voters']
+            freq_vote = int(10000 * total / total_possible_voters) / 100
+
+            parsed_entry['frekwencja'] = freq_vote
+
             self.obwod_id_to_index[obwod_id] = len(self.results_data)
             self.results_data.append(parsed_entry)
         logging.info("Loaded %i voting results from raw data file", len(self.results_data))

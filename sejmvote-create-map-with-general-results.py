@@ -39,7 +39,7 @@ def parse_arguments():
     parser.add_argument(
         '--val-key', '-vk',
         required=True,
-        choices=['opozycja', 'konfederacja', 'pis', 'ko', 'psl', 'sld'],
+        choices=['opozycja', 'konfederacja', 'pis', 'ko', 'psl', 'sld', 'frekwencja'],
         help='Defines what should be taken into account to count value displayed on map')
 
     parser.add_argument(
@@ -148,6 +148,8 @@ def create_counted_value(val_key, general_results_entry, candidate_results_data,
         counted = general_results_entry['total_votes_lista_psl']
     elif val_key == 'sld':
         counted = general_results_entry['total_votes_lista_sld']
+    elif val_key == 'frekwencja':
+        counted = general_results_entry['frekwencja']
     else:
         raise Exception(f"Unknown val_key = {val_key}")
 
@@ -174,14 +176,17 @@ def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, ca
         powiat_name = place_entry['powiat_name']
         gmina_name = place_entry['gmina_name']
         candidate_name = None
+
+        freq_vote = results_entry['frekwencja']
+
         if cand_index is not None:
             candidate_name = candidate_results_data.get_candidate_name(val_key, cand_index)
 
         counted = create_counted_value(val_key, results_entry, candidate_results_data, cand_index, obwod_id)
 
-        perc_val = int(10000 * counted / total) / 100
-
-        freq_vote = int(10000 * total / total_possible_voters) / 100
+        perc_val = counted
+        if val_key not in ['frekwencja']:
+            perc_val = int(10000 * counted / total) / 100
 
         new_entry = [
             obwod_id,
