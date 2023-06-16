@@ -7,10 +7,13 @@ logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(asctime)s\t%(m
 import folium
 from folium.plugins import FastMarkerCluster, MarkerCluster
 
+import re
 import pandas as pd
 import numpy as np
 from aipolit.sejmvote.voting_sejm_general_results import VotingSejmGeneralResults
 from aipolit.sejmvote.voting_sejm_candidate_results import VotingSejmCandidateResults
+from aipolit.utils.html import write_report_header, write_report_bottom, create_interactive_html_table_string, create_html_link_string
+from aipolit.utils.pandas_utils import df_to_list_of_lists
 
 
 def parse_arguments():
@@ -113,6 +116,7 @@ def create_description(row, party, val_key2):
     borders_description = row['borders_description']
     number_of_obwods_in_same_place = row['number_of_obwods_in_same_place']
     location_name = row['location_name']
+    location_fullname = row['location_fullname']
     city = row['city']
     powiat_name = row['powiat_name']
     gmina_name = row['gmina_name']
@@ -147,7 +151,7 @@ def create_description(row, party, val_key2):
 
     description += \
       f"<b>Nr obwodu</b>: {obwod_number}</br>" + \
-      f"<b>Siedziba:</b> {location_name} ({city})</br>" + \
+      f"<b>Siedziba:</b> {location_fullname} ({city})</br>" + \
       f"<b>Powiat / gmina:</b> {powiat_name} / {gmina_name}</br>" + \
       f"<b>Liczba obwodów w tej samej siedzibie</b>: {number_of_obwods_in_same_place}</br>" + \
       f"<b>Populacja</b>: {total_possible_voters} (miejsce: {total_possible_voters_rank})</br>" + \
@@ -227,6 +231,7 @@ def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, ca
         total_possible_voters = results_entry['total_possible_voters']
         number_of_obwods_in_same_place = location_entry['duplicate_count']
         location_name = place_entry['location_name']
+        location_fullname = place_entry['location_fullname']
         city = place_entry['city']
         powiat_name = place_entry['powiat_name']
         gmina_name = place_entry['gmina_name']
@@ -269,7 +274,8 @@ def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, ca
             total,
             freq_vote,
             cand_index,
-            candidate_name]
+            candidate_name,
+            location_fullname]
         raw_data.append(new_entry)
 
     df = pd.DataFrame(
@@ -293,7 +299,8 @@ def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, ca
             'total_valid_votes',
             'freq_vote',
             'cand_index',
-            'candidate_name'])
+            'candidate_name',
+            'location_fullname'])
 
     normalize_df_value(df, 'perc_val', 'norm_val')
     if invert_val:
@@ -323,18 +330,18 @@ def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, ca
         'bb_wysoko': '#117000',
     }
 
+    df['final_norm_val'] = df['norm_val']
+
     if val_key2 is not None:
         if agg_method == 'average':
-            df['weight'] = pd.cut((df['norm_val'] + df['norm_val2']) * 0.5, bins=bins, labels=labels, include_lowest=True)
+            df['final_norm_val'] = (df['norm_val'] + df['norm_val2']) * 0.5
         elif agg_method == 'multiply':
             df['weight_dist'] = df['norm_val'] * df['norm_val2']
-            normalize_df_value(df, 'weight_dist', 'weight_dist_norm')
-            df['weight'] = pd.cut(df['weight_dist_norm'], bins=bins, labels=labels, include_lowest=True)
+            normalize_df_value(df, 'weight_dist', 'final_norm_val')
         else:
             raise Exception(f"Unknown agg method: {agg_method}")
 
-    else:
-        df['weight'] = pd.cut(df['norm_val'], bins=bins, labels=labels, include_lowest=True)
+    df['weight'] = pd.cut(df['final_norm_val'], bins=bins, labels=labels, include_lowest=True)
 
     df['perc_rank'] = df['perc_val'].rank(ascending=False)
     df['perc_rank2'] = df['perc_val2'].rank(ascending=False)
@@ -349,12 +356,12 @@ def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, ca
 
 def preprocess_data_for_map(data_for_map, args):
     if args.topn:
-        df = data_for_map.nlargest(args.topn, ['perc_val'])
+        df = data_for_map.nlargest(args.topn, ['final_norm_val'])
         df = df.reset_index(drop=True)
         return df
 
     if args.lown:
-        df = data_for_map.nsmallest(args.lown, ['perc_val'])
+        df = data_for_map.nsmallest(args.lown, ['final_norm_val'])
         df = df.reset_index(drop=True)
         return df
 
@@ -416,6 +423,50 @@ def create_map_cluster(df, out_fp):
     map1.save(outfile=out_fp)
 
 
+def dump_raw_data(map_out_fp, df):
+    raw_out_fp = re.sub(r".html$", "-raw.html", map_out_fp)
+    if raw_out_fp == map_out_fp:
+        raw_out_fp = map_out_fp + '-raw'
+
+    logging.info("Write raw data to %s", raw_out_fp)
+
+    def create_obwod_link(row):
+        longitude = row['longitude']
+        latitude = row['latitude']
+        url = f"https://maps.google.com/?q={latitude},{longitude}"
+        location_fullname = row['location_fullname'] + f" (nr obw. {row['obwod_number']})"
+        return create_html_link_string(url, location_fullname, True)
+
+    df['obwod_link'] = df.apply(create_obwod_link, axis=1)
+
+    with open(raw_out_fp, "w") as f:
+        write_report_header(f, "Surowe dane", "index.html")
+
+        raw_data = df_to_list_of_lists(df, ['obwod_link', 'powiat_name', 'gmina_name', 'total_possible_voters', 'total_possible_voters_rank', 'freq_vote', 'freq_vote_rank', 'perc_val', 'perc_rank'])
+
+        html_str = create_interactive_html_table_string(
+            raw_data,
+            [
+                'Lokalizacja',
+                'Powiat',
+                'Gmina',
+                'Popul.',
+                'Rank(pop)',
+                'Frekw.',
+                'Rank(frek)',
+                'Wynik',
+                "Rank(Wynik)",
+
+            ],
+            'raw_data',
+            with_pagination=False,
+            with_toggle_columns=True,
+            with_search_in_each_column=True,
+            add_index=False)
+        f.write(html_str)
+        write_report_bottom(f, "index.html")
+
+
 def main():
     args = parse_arguments()
     general_results_data = VotingSejmGeneralResults()
@@ -445,6 +496,8 @@ def main():
         create_map_normal(data_for_map, args.output)
     else:
         raise Exception(f"Unknown map type in args {args.map_type}")
+
+    dump_raw_data(args.output, data_for_map)
 
 
 main()
