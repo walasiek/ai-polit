@@ -42,11 +42,34 @@ def parse_arguments():
 #        default='Kraków',
         help='Limit query only to data from the given powiat name')
 
+    POSSIBLE_VAL_KEY_CHOICES = ['opozycja', 'konfederacja', 'pis', 'ko', 'psl', 'sld', 'frekwencja']
     parser.add_argument(
         '--val-key', '-vk',
         required=True,
-        choices=['opozycja', 'konfederacja', 'pis', 'ko', 'psl', 'sld', 'frekwencja'],
+        choices=POSSIBLE_VAL_KEY_CHOICES,
         help='Defines what should be taken into account to count value displayed on map')
+
+    parser.add_argument(
+        '--val-key2', '-vk2',
+        choices=POSSIBLE_VAL_KEY_CHOICES,
+        default=None,
+        help='Same as --val-key, but if defined then takes linear combination of both val-key and val-key2')
+
+    parser.add_argument(
+        '--agg',
+        choices=['average', 'multiply'],
+        default='average',
+        help='if val-key2 is defined then use the aggregation method: average, distance (Euclidean distance)')
+
+    parser.add_argument(
+        '--invert-val', '-iv',
+        action="store_true",
+        help='inverts value - high value becomes low and vice versa')
+
+    parser.add_argument(
+        '--invert-val2', '-iv2',
+        action="store_true",
+        help='inverts value2 - high value becomes low and vice versa')
 
     parser.add_argument(
         '--cand-index', '-ci',
@@ -73,10 +96,17 @@ def parse_arguments():
 
     return args
 
-def create_description(row, party):
+def create_description(row, party, val_key2):
     obwod_number = row['obwod_number']
     perc_val = row['perc_val']
     perc_rank = int(row['perc_rank'])
+
+    perc_val2 = None
+    perc_rank2 = None
+    if val_key2:
+        perc_val2 = row['perc_val2']
+        perc_rank2 = int(row['perc_rank2'])
+
     weight = row['weight']
     total_possible_voters = row['total_possible_voters']
     total_possible_voters_rank = int(row['total_possible_voters_rank'])
@@ -94,13 +124,18 @@ def create_description(row, party):
     cand_index = row['cand_index']
     candidate_name = row['candidate_name']
 
-
     description = ''
 
     if candidate_name:
         description +=  f"<b>POPARCIE DLA {candidate_name} z listy {party}</b></br>"
     else:
         description +=  f"<b>POPARCIE DLA {party}</b></br>"
+
+    if val_key2:
+        if candidate_name:
+            description +=  f"<b>(Drugi czynnik): POPARCIE DLA {candidate_name} z listy {val_key2}</b></br>"
+        else:
+            description +=  f"<b>(Drugi czynnik): POPARCIE DLA {val_key2}</b></br>"
 
     for_whom_votes = ''
     if candidate_name:
@@ -119,7 +154,13 @@ def create_description(row, party):
       f"<b>Ważnych głosów (ogółem)</b>: {total_valid_votes}</br>" + \
       f"<b>Frekwencja</b>: {freq_vote}% (miejsce: {freq_vote_rank})</br>" + \
       f"<b>Głosów na {for_whom_votes}</b>: {counted_votes} (miejsce: {counted_votes_rank})</br>" + \
-      f"<b>% wynik:</b> {perc_val}% (miejsce: {perc_rank})</br>" + \
+      f"<b>% wynik:</b> {perc_val}% (miejsce: {perc_rank})</br>"
+
+    if perc_val2 is not None:
+        description += \
+          f"<b>% wynik2:</b> {perc_val2}% (miejsce: {perc_rank2})</br>"
+
+    description += \
       f"<b>WAGA:</b> {weight} (znormalizowana ocena: {norm_val_round})<br/>" + \
       f"<b>Granice obwodu:</b> {borders_description}"
 
@@ -164,7 +205,13 @@ def create_counted_value(val_key, general_results_entry, candidate_results_data,
     return counted
 
 
-def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, candidate_results_data):
+def normalize_df_value(df, val_key, new_key):
+    min_value = df[val_key].min()
+    max_value = df[val_key].max()
+    df[new_key] = (df[val_key] - min_value) / (max_value - min_value)
+
+
+def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, candidate_results_data, val_key2, agg_method, invert_val, invert_val2):
     raw_data = []
     for obwod_id in obwod_ids:
         results_entry = general_results_data.get_results_entry_by_obwod_id(obwod_id)
@@ -191,14 +238,20 @@ def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, ca
             candidate_name = candidate_results_data.get_candidate_name(val_key, cand_index)
 
         counted = create_counted_value(val_key, results_entry, candidate_results_data, cand_index, obwod_id)
-
         perc_val = counted
         if val_key not in ['frekwencja']:
             perc_val = int(10000 * counted / total) / 100
 
+        counted2 = None
+        perc_val2 = None
+        if val_key2 is not None:
+            counted2 = create_counted_value(val_key2, results_entry, candidate_results_data, cand_index, obwod_id)
+            perc_val2 = counted2
+            if val_key2 not in ['frekwencja']:
+                perc_val2 = int(10000 * counted2 / total) / 100
+
         new_entry = [
             obwod_id,
-            perc_val,
             obwod_number,
             location_deduplicated[0],
             location_deduplicated[1],
@@ -210,6 +263,9 @@ def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, ca
             powiat_name,
             gmina_name,
             counted,
+            perc_val,
+            counted2,
+            perc_val2,
             total,
             freq_vote,
             cand_index,
@@ -220,7 +276,6 @@ def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, ca
         raw_data,
         columns=[
             'obwod_id',
-            'perc_val',
             'obwod_number',
             'latitude',
             'longitude',
@@ -232,19 +287,25 @@ def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, ca
             'powiat_name',
             'gmina_name',
             'counted_votes',
+            'perc_val',
+            'counted_votes2',
+            'perc_val2',
             'total_valid_votes',
             'freq_vote',
             'cand_index',
             'candidate_name'])
 
-    min_value = df['perc_val'].min()
-    max_value = df['perc_val'].max()
-    df['norm_val'] = (df['perc_val'] - min_value) / (max_value - min_value)
+    normalize_df_value(df, 'perc_val', 'norm_val')
+    if invert_val:
+        df['norm_val'] = 1.0 - df['norm_val']
+
+    normalize_df_value(df, 'perc_val2', 'norm_val2')
+    if invert_val2:
+        df['norm_val2'] = 1.0 - df['norm_val2']
 
 #    labels = ['b_mało', 'mało', 'średnio', 'dużo', 'b_dużo']
     labels = ['bb_słabiutko', 'b_słabiutko', 'słabiutko', 'słabo-', 'słabo', 'średnio-', 'średnio', 'średnio+', 'sporo', 'sporo+', 'wysoko', 'b_wysoko', 'bb_wysoko']
-    bins = np.linspace(min_value, max_value, len(labels) + 1)
-
+    bins = np.linspace(0, 1, len(labels) + 1)
 
     label_to_color = {
         'bb_słabiutko': '#ab0000',
@@ -262,22 +323,27 @@ def create_data_for_map(obwod_ids, general_results_data, val_key, cand_index, ca
         'bb_wysoko': '#117000',
     }
 
-    #label_to_color = {
-    #    'b_mało': '#f60404',
-    #    'mało': '#f87b05',
-    #    'średnio': '#f8e604',
-    #    'dużo': '#d4ff32',
-    #    'b_dużo': '#089000',
-    #}
+    if val_key2 is not None:
+        if agg_method == 'average':
+            df['weight'] = pd.cut((df['norm_val'] + df['norm_val2']) * 0.5, bins=bins, labels=labels, include_lowest=True)
+        elif agg_method == 'multiply':
+            df['weight_dist'] = df['norm_val'] * df['norm_val2']
+            normalize_df_value(df, 'weight_dist', 'weight_dist_norm')
+            df['weight'] = pd.cut(df['weight_dist_norm'], bins=bins, labels=labels, include_lowest=True)
+        else:
+            raise Exception(f"Unknown agg method: {agg_method}")
 
-    df['weight'] = pd.cut(df['perc_val'], bins=bins, labels=labels, include_lowest=True)
+    else:
+        df['weight'] = pd.cut(df['norm_val'], bins=bins, labels=labels, include_lowest=True)
+
     df['perc_rank'] = df['perc_val'].rank(ascending=False)
+    df['perc_rank2'] = df['perc_val2'].rank(ascending=False)
     df['freq_vote_rank'] = df['freq_vote'].rank(ascending=False)
     df['counted_votes_rank'] = df['counted_votes'].rank(ascending=False)
     df['total_possible_voters_rank'] = df['total_possible_voters'].rank(ascending=False)
 
     df['color'] = df.apply(lambda row: label_to_color[row['weight']], axis=1)
-    df['description'] = df.apply(lambda row: create_description(row, val_key), axis=1)
+    df['description'] = df.apply(lambda row: create_description(row, val_key, val_key2), axis=1)
     df['marker_size'] = df.apply(lambda row: create_marker_size(row), axis=1)
     return df
 
@@ -349,6 +415,7 @@ def create_map_cluster(df, out_fp):
     logging.info("Save map to %s", out_fp)
     map1.save(outfile=out_fp)
 
+
 def main():
     args = parse_arguments()
     general_results_data = VotingSejmGeneralResults()
@@ -369,7 +436,7 @@ def main():
         powiat_name=args.powiat)
 
     logging.info("We have %i obwod IDS available to show on MAP", len(obwod_ids))
-    data_for_map = create_data_for_map(obwod_ids, general_results_data, args.val_key, args.cand_index, candidate_results_data)
+    data_for_map = create_data_for_map(obwod_ids, general_results_data, args.val_key, args.cand_index, candidate_results_data, args.val_key2, args.agg, args.invert_val, args.invert_val2)
 
     data_for_map = preprocess_data_for_map(data_for_map, args)
     if args.map_type == 'clustered':
