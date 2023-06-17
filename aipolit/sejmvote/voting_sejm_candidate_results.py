@@ -5,7 +5,7 @@ from collections import OrderedDict
 from aipolit.utils.text import read_csv
 from aipolit.utils.globals import \
      AIPOLIT_SEJM_ELECTION_RAW_DATA_DIR
-from aipolit.sejmvote.voting_place_data import VotingPlaceData
+from aipolit.sejmvote.voting_place_data_factory import create_voting_place_data
 
 
 class VotingSejmCandidateResults:
@@ -34,7 +34,7 @@ class VotingSejmCandidateResults:
     def __init__(self, okreg_no):
         self.okreg_no = okreg_no
 
-        self.voting_place_data = VotingPlaceData.get_instance()
+        self.voting_place_data = create_voting_place_data('sejm2019')
 
         # each results data has keys: total_votes_lista_{party_name}_cand_{cand_no}
         # where cand_no starts from 0!

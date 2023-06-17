@@ -481,7 +481,7 @@ def main():
 
     obwod_ids = general_results_data.voting_place_data.get_obwod_ids_matching_criteria(
         city=args.city,
-        sejm_okreg_number=args.okreg,
+        okreg_number=args.okreg,
         with_location_data=True,
         min_population=300,
         powiat_name=args.powiat)

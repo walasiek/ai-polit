@@ -5,7 +5,7 @@ from collections import OrderedDict
 from aipolit.utils.text import read_csv
 from aipolit.utils.globals import \
      AIPOLIT_PREZ2020_ELECTION_RAW_DATA_DIR
-from aipolit.sejmvote.voting_place_data import VotingPlaceData
+from aipolit.sejmvote.voting_place_data_factory import create_voting_place_data
 
 
 class VotingPrez2020CandidateResults:
@@ -29,8 +29,6 @@ class VotingPrez2020CandidateResults:
         "Gmina": 'gmina_name',
         "Powiat": 'powiat_name',
         "Województwo": 'region_name',
-
-        # TODO tutaj skończyłem
         "Komisje obwodowe otrzymały kart do głosowania": None,
         "Liczba wyborców uprawnionych do głosowania": 'total_possible_voters',
         "Nie wykorzystano kart do głosowania": None,
@@ -68,7 +66,7 @@ class VotingPrez2020CandidateResults:
 
     def __init__(self, okreg_no):
         self.okreg_no = okreg_no
-        self.voting_place_data = VotingPlaceData.get_instance()
+        self.voting_place_data = create_voting_place_data("prez2020")
 
         # each results data has keys: total_votes_lista_{party_name}_cand_{cand_no}
         # party_name := 1_tura | 2_tura (not implemented)

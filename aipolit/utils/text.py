@@ -190,15 +190,20 @@ def emojize_case_insensitive(text, language='alias'):
     return "".join(result)
 
 
-def read_csv(fp, delimiter=';', quotechar='"'):
+def read_csv(fp, delimiter=';', quotechar='"', fix_utf=False):
     """
     Returns list of rows.
     Each row is Ordered dict: key -> value
     Assumes that first row is a header.
     """
     data = []
-    with open(fp, "r") as f:
-        reader = csv.reader(f, delimiter=';', quotechar='"')
+    def_encoding = 'utf-8'
+    if fix_utf:
+        def_encoding = 'utf-8-sig'
+
+    with open(fp, "r", encoding=def_encoding) as f:
+        reader = csv.reader(f, delimiter=delimiter, quotechar=quotechar)
+
         firstrow = None
         for row in reader:
             if not firstrow:

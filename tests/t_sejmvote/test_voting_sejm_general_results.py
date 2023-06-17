@@ -8,12 +8,12 @@ def test_simple_check():
 
     obwod_ids = general_results_data.voting_place_data.get_obwod_ids_matching_criteria(
         city="Kraków",
-        sejm_okreg_number='13',
-        with_location_data=True,
+        okreg_number='13',
+        with_location_data=False,
         min_population=300,
         powiat_name=None)
 
-    assert len(obwod_ids) == 398
+    assert len(obwod_ids) == 405
 
     assert '126101===21' in obwod_ids
 

@@ -4,8 +4,8 @@ import argparse
 import logging
 logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(asctime)s\t%(message)s')
 
-from aipolit.sejmvote.voting_place_data import VotingPlaceData
 from aipolit.sejmvote.voting_place_locator import VotingPlaceLocator
+from aipolit.sejmvote.voting_place_data_factory import create_voting_place_data
 
 
 def parse_arguments():
@@ -56,6 +56,7 @@ def create_obwod_ids_to_process(data, args):
             if entry['city'] != args.city:
                 continue
         if args.okreg:
+            # TODO warning need compatibility with prez2020!!!
             if entry['sejm_okreg_number'] != args.okreg:
                 continue
 
@@ -74,7 +75,7 @@ def create_obwod_ids_to_process(data, args):
 def main():
     args = parse_arguments()
 
-    data = VotingPlaceData.get_instance()
+    data = create_voting_place_data("sejm2019")
     obwod_id_to_process = create_obwod_ids_to_process(data, args)
     process_data(data, obwod_id_to_process)
 

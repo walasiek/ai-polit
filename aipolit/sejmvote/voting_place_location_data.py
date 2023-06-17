@@ -2,8 +2,6 @@ import logging
 import os
 from collections import OrderedDict, Counter
 from aipolit.utils.text import read_tsv, NONE_STRING
-from aipolit.utils.globals import \
-     AIPOLIT_SEJM_ELECTION_VOTING_PLACE_DATA_DIR
 
 
 class VotingPlaceLocationData:
@@ -14,14 +12,14 @@ class VotingPlaceLocationData:
         'longitude',
     }
 
-    def __init__(self):
+    def __init__(self, data_directory):
         self.obwod_id_to_location_data = OrderedDict()
+        self.data_directory = data_directory
 
-    @classmethod
-    def get_data_fp(cls):
+    def get_data_fp(self):
         fp = os.path.join(
-            AIPOLIT_SEJM_ELECTION_VOTING_PLACE_DATA_DIR,
-            cls.FILENAME)
+            self.data_directory,
+            self.FILENAME)
         return fp
 
     @classmethod

@@ -3,7 +3,7 @@ from collections import OrderedDict
 from aipolit.utils.text import read_csv
 from aipolit.utils.globals import \
      AIPOLIT_SEJM_ELECTION_RAW_DATA_GENERAL_RESULTS_FP
-from aipolit.sejmvote.voting_place_data import VotingPlaceData
+from aipolit.sejmvote.voting_place_data_factory import create_voting_place_data
 
 
 class VotingSejmGeneralResults:
@@ -66,7 +66,7 @@ class VotingSejmGeneralResults:
         'KOMITET WYBORCZY WYBORCÓW MNIEJSZOŚĆ NIEMIECKA - ZPOW-601-15/19': None,
     }
     def __init__(self):
-        self.voting_place_data = VotingPlaceData.get_instance()
+        self.voting_place_data = create_voting_place_data('sejm2019')
         self.results_data = []
         self.obwod_id_to_index = dict()
         self._load_from_raw()
