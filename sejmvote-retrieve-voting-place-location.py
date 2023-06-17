@@ -6,6 +6,7 @@ logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(asctime)s\t%(m
 
 from aipolit.sejmvote.voting_place_locator import VotingPlaceLocator
 from aipolit.sejmvote.voting_place_data_factory import create_voting_place_data
+from aipolit.sejmvote.globals import AVAILABLE_ELECTIONS_IDS
 
 
 def parse_arguments():
@@ -27,12 +28,18 @@ def parse_arguments():
         type=int,
         help='Limit number of voting places processed')
 
+    parser.add_argument(
+        '--elections-id', '-e',
+        choices=AVAILABLE_ELECTIONS_IDS,
+        required=True,
+        help='Elections IDS to be quiried')
+
     args = parser.parse_args()
 
     return args
 
 
-def process_data(data, obwod_id_to_process):
+def process_data(data, obwod_id_to_process, elections_id):
     voting_place_locator = VotingPlaceLocator()
 
     found_location = 0
@@ -56,8 +63,8 @@ def create_obwod_ids_to_process(data, args):
             if entry['city'] != args.city:
                 continue
         if args.okreg:
-            # TODO warning need compatibility with prez2020!!!
-            if entry['sejm_okreg_number'] != args.okreg:
+            # warning for compatibility with sejm2019, prez2020, etc.!!!
+            if entry[data.okreg_key_name] != args.okreg:
                 continue
 
         if args.limit:
@@ -75,8 +82,8 @@ def create_obwod_ids_to_process(data, args):
 def main():
     args = parse_arguments()
 
-    data = create_voting_place_data("sejm2019")
+    data = create_voting_place_data(args.elections_id)
     obwod_id_to_process = create_obwod_ids_to_process(data, args)
-    process_data(data, obwod_id_to_process)
+    process_data(data, obwod_id_to_process, args.elections_id)
 
 main()
