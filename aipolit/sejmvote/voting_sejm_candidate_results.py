@@ -33,6 +33,7 @@ class VotingSejmCandidateResults:
 
     def __init__(self, okreg_no):
         self.okreg_no = okreg_no
+
         self.voting_place_data = VotingPlaceData.get_instance()
 
         # each results data has keys: total_votes_lista_{party_name}_cand_{cand_no}

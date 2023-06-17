@@ -20,6 +20,7 @@ def test_simple_check():
     results_entry = general_results_data.get_results_entry_by_obwod_id("126101===21")
     assert results_entry is not None
 
+    # source: https://sejmsenat2019.pkw.gov.pl/sejmsenat2019/pl/wyniki/protokol/sejm/547861
     assert results_entry['region_name'] == 'małopolskie'
     assert results_entry['total_possible_voters'] == 1604
     assert results_entry['total_valid_votes'] == 1157

@@ -11,6 +11,12 @@ from aipolit.sejmvote.voting_place_data import VotingPlaceData
 class VotingPrez2020CandidateResults:
     INSTANCE = dict()
 
+    INTEGER_COLUMNS = {
+        'total_possible_voters',
+        'total_valid_votes',
+        'total_votes_lista_1_tura',
+    }
+
     TRANSLATE_RAW_COLUMNS = {
         "Symbol kontrolny": '',
         "Nr OKW": 'okreg_no',
@@ -46,7 +52,7 @@ class VotingPrez2020CandidateResults:
         "W tym z powodu postawienia znaku „X” obok nazwiska dwóch lub większej liczby kandydatów": None,
         "W tym z powodu niepostawienia znaku „X” obok nazwiska żadnego kandydata": None,
         "W tym z powodu postawienia znaku „X” wyłącznie obok skreślonego nazwiska kandydata": None,
-        "Liczba głosów ważnych oddanych łącznie na wszystkich kandydatów": None,
+        "Liczba głosów ważnych oddanych łącznie na wszystkich kandydatów": 'total_valid_votes',
         "Robert BIEDROŃ": "",
         "Krzysztof BOSAK": "",
         "Andrzej Sebastian DUDA": "",
@@ -125,14 +131,31 @@ class VotingPrez2020CandidateResults:
                     parsed_entry[entry_key] = int(value)
                 elif key in self.TRANSLATE_RAW_COLUMNS:
                     parsed_key = self.TRANSLATE_RAW_COLUMNS[key]
+                    if parsed_key in self.INTEGER_COLUMNS:
+                        if value == '-':
+                            value = 0
+                        value = int(value)
                     parsed_entry[parsed_key] = value
 
             obwod_id = self.voting_place_data.create_id_from_entry(parsed_entry)
             parsed_entry['obwod_id'] = obwod_id
+
+            if self.okreg_no is not None:
+                if self.okreg_no != parsed_entry['okreg_no']:
+                    continue
+
+            # add frekwencja
+            total = parsed_entry['total_valid_votes']
+            total_possible_voters = parsed_entry['total_possible_voters']
+            freq_vote = 0
+            if total_possible_voters > 0:
+                freq_vote = int(10000 * total / total_possible_voters) / 100
+            parsed_entry['frekwencja'] = freq_vote
+
+            parsed_entry['total_votes_lista_1_tura'] = parsed_entry['total_valid_votes']
+
             self.obwod_id_to_index[obwod_id] = len(self.results_data)
             self.results_data.append(parsed_entry)
-
-        print(self.results_data[0]['obwod_id'])
 
     def _parse_raw_header(self, row):
         current_lista_id = None
