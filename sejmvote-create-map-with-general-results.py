@@ -10,16 +10,16 @@ from folium.plugins import FastMarkerCluster, MarkerCluster
 import re
 import pandas as pd
 import numpy as np
-from aipolit.sejmvote.voting_sejm_general_results import VotingSejmGeneralResults
-from aipolit.sejmvote.voting_sejm_candidate_results import VotingSejmCandidateResults
 from aipolit.utils.html import write_report_header, write_report_bottom, create_interactive_html_table_string, create_html_link_string
 from aipolit.utils.pandas_utils import df_to_list_of_lists
+from aipolit.sejmvote.globals import AVAILABLE_ELECTIONS_IDS
+from aipolit.sejmvote.voting_factory import create_voting_general_results, create_voting_candidate_results
 
 
 def parse_arguments():
     """parse command line arguments"""
     parser = argparse.ArgumentParser(
-        description='Creates map using general election results from Sejm 2019'
+        description='Creates map using general election results from elections of the given ID'
     )
 
     parser.add_argument(
@@ -28,24 +28,27 @@ def parse_arguments():
         help='HTML filepath to save output map')
 
     parser.add_argument(
+        '--elections-id', '-e',
+        choices=AVAILABLE_ELECTIONS_IDS,
+        required=True,
+        help='Elections IDS to be quiried')
+
+    parser.add_argument(
         '--okreg', '-o',
-#        default='13',
         default=None,
         help='Limit query only to data from the given Sejm okreg')
 
     parser.add_argument(
         '--city', '-c',
         default=None,
-#        default='Kraków',
         help='Limit query only to data from the given city')
 
     parser.add_argument(
         '--powiat', '-p',
         default=None,
-#        default='Kraków',
         help='Limit query only to data from the given powiat name')
 
-    POSSIBLE_VAL_KEY_CHOICES = ['opozycja', 'konfederacja', 'pis', 'ko', 'psl', 'sld', 'frekwencja']
+    POSSIBLE_VAL_KEY_CHOICES = ['opozycja', 'konfederacja', 'pis', 'ko', 'psl', 'sld', 'frekwencja', '1_tura']
     parser.add_argument(
         '--val-key', '-vk',
         required=True,
@@ -201,6 +204,8 @@ def create_counted_value(val_key, general_results_entry, candidate_results_data,
         counted = general_results_entry['total_votes_lista_psl']
     elif val_key == 'sld':
         counted = general_results_entry['total_votes_lista_sld']
+    elif val_key == '1_tura':
+        counted = general_results_entry['total_votes_lista_1_tura']
     elif val_key == 'frekwencja':
         counted = general_results_entry['frekwencja']
     else:
@@ -469,13 +474,13 @@ def dump_raw_data(map_out_fp, df):
 
 def main():
     args = parse_arguments()
-    general_results_data = VotingSejmGeneralResults()
+    general_results_data = create_voting_general_results(elections_id=args.elections_id)
     candidate_results_data = None
     if args.cand_index is not None:
         if args.okreg is None:
             raise Exception("Cant use --cand-index param if --okreg is not defined!")
 
-        candidate_results_data = VotingSejmCandidateResults(okreg_no=args.okreg)
+        candidate_results_data = create_voting_candidate_results(elections_id=args.elections_id, okreg_no=args.okreg)
         if args.val_key not in candidate_results_data.lista_id_to_candidate_names:
             raise Exception("Cant use --val_key which is not one party on the list (do not use merged vals like: opozycja)!")
 
