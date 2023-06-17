@@ -34,9 +34,9 @@ AIPOLIT_PREZ2020_ELECTION_DATA_DIR = os.path.join(AIPOLIT_DATA_DIR, 'prez2020-el
 
 # Here you should download raw data from election:
 # https://prezydent20200628.pkw.gov.pl/prezydent20200628/pl/dane_w_arkuszach -> Wyniki głosowania na kandydatów w pierwszej turze wyborów -> po obwodach -> CSV
-# https://prezydent20200628.pkw.gov.pl/prezydent20200628/pl/dane_w_arkuszach -> Wyniki głosowania na kandydatów w drugiej turze wyborów -> po obwodach -> CSV
 # unzip the files
 AIPOLIT_PREZ2020_ELECTION_RAW_DATA_DIR = os.path.join(AIPOLIT_PREZ2020_ELECTION_DATA_DIR, 'raw-results')
+AIPOLIT_PREZ2020_ELECTION_RAW_DATA_GENERAL_RESULTS_FP = os.path.join(AIPOLIT_PREZ2020_ELECTION_RAW_DATA_DIR, 'wyniki_gl_na_kand_po_obwodach_utf8.csv')
 
 # Here will be placed data of each voting place
 AIPOLIT_PREZ2020_ELECTION_VOTING_PLACE_DATA_DIR = os.path.join(AIPOLIT_PREZ2020_ELECTION_DATA_DIR, 'voting-place')
@@ -44,6 +44,5 @@ AIPOLIT_PREZ2020_ELECTION_VOTING_PLACE_DATA_DIR = os.path.join(AIPOLIT_PREZ2020_
 # Here you should download raw data from election voting places
 # https://prezydent20200628.pkw.gov.pl/prezydent20200628/pl/dane_w_arkuszach
 # Obwody głosowania w pierwszej turze wyborów -> CSV
-# Obwody głosowania w drugiej turze wyborów -> CSV
 # unzip the files
-AIPOLIT_PREZ2020_ELECTION_VOTING_PLACE_RAW_DATA_FP = os.path.join(AIPOLIT_PREZ2020_ELECTION_VOTING_PLACE_DATA_DIR, 'obwody_glosowania.csv')
+AIPOLIT_PREZ2020_ELECTION_VOTING_PLACE_RAW_DATA_FP = os.path.join(AIPOLIT_PREZ2020_ELECTION_VOTING_PLACE_DATA_DIR, 'obwody_glosowania_utf8.csv')
