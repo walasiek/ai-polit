@@ -487,7 +487,16 @@ def main():
         powiat_name=args.powiat)
 
     logging.info("We have %i obwod IDS available to show on MAP", len(obwod_ids))
-    data_for_map = create_data_for_map(obwod_ids, general_results_data, args.val_key, args.cand_index, candidate_results_data, args.val_key2, args.agg, args.invert_val, args.invert_val2)
+    data_for_map = create_data_for_map(
+        obwod_ids,
+        general_results_data,
+        args.val_key,
+        args.cand_index,
+        candidate_results_data,
+        args.val_key2,
+        args.agg,
+        args.invert_val,
+        args.invert_val2)
 
     data_for_map = preprocess_data_for_map(data_for_map, args)
     if args.map_type == 'clustered':
