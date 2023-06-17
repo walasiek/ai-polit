@@ -5,7 +5,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(asctime)s\t%(message)s')
 
 from aipolit.sejmvote.voting_place_locator import VotingPlaceLocator
-from aipolit.sejmvote.voting_factory import create_voting_place_data
+from aipolit.sejmvote.voting_factory_place_data import create_voting_place_data
 from aipolit.sejmvote.globals import AVAILABLE_ELECTIONS_IDS
 
 

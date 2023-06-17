@@ -5,7 +5,7 @@ from collections import OrderedDict
 from aipolit.utils.text import read_csv
 from aipolit.utils.globals import \
      AIPOLIT_PREZ2020_ELECTION_RAW_DATA_DIR
-from aipolit.sejmvote.voting_factory import create_voting_place_data
+from aipolit.sejmvote.voting_factory_place_data import create_voting_place_data
 
 
 class VotingPrez2020CandidateResults:

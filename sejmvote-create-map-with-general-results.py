@@ -13,7 +13,8 @@ import numpy as np
 from aipolit.utils.html import write_report_header, write_report_bottom, create_interactive_html_table_string, create_html_link_string
 from aipolit.utils.pandas_utils import df_to_list_of_lists
 from aipolit.sejmvote.globals import AVAILABLE_ELECTIONS_IDS
-from aipolit.sejmvote.voting_factory import create_voting_general_results, create_voting_candidate_results
+from aipolit.sejmvote.voting_factory_general_results import create_voting_general_results
+from aipolit.sejmvote.voting_factory_candidate_results import create_voting_candidate_results
 
 
 def parse_arguments():
