@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import argparse
 import logging
 logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(asctime)s\t%(message)s')
@@ -429,7 +430,8 @@ def create_map_cluster(df, out_fp):
     map1.save(outfile=out_fp)
 
 
-def dump_raw_data(map_out_fp, df):
+def dump_raw_data(args, df, df_orig):
+    map_out_fp = args.output
     raw_out_fp = re.sub(r".html$", "-raw.html", map_out_fp)
     if raw_out_fp == map_out_fp:
         raw_out_fp = map_out_fp + '-raw'
@@ -447,6 +449,50 @@ def dump_raw_data(map_out_fp, df):
 
     with open(raw_out_fp, "w") as f:
         write_report_header(f, "Surowe dane", "index.html")
+
+        f.write("""
+<p>
+Poniższe dane pozwalają przejrzeć dokładne wyniki w przebadanych obwodach do głosowania. Zawierają także drobne statystyki, które ułatwiają odnalezienie się w gąszczu liczb.
+<b>Uwaga!</b> Ze wzgledu na pominięcie niektórych obwodów w algorytmie (z powodów technicznych) sumaryczne wyniki mogą się nieznacznie różnić od rzeczywistych wyników wyborów.
+</p>
+""")
+        f.write("<h1>Parametry wywołania generatora raportu:</h1>\n")
+        f.write("<ul>\n")
+        f.write(f"<li>nazwa pliku: {os.path.basename(raw_out_fp)}</li>\n")
+        f.write(f"<li>id wyborów: {args.elections_id}</li>\n")
+        f.write(f"<li>parametr okręg: {args.okreg}</li>\n")
+        f.write(f"<li>parametr miasto: {args.city}</li>\n")
+        f.write(f"<li>parametr powiat: {args.city}</li>\n")
+        f.write(f"<li>parametr identyfikator liczonej wartości 1: {args.val_key}</li>\n")
+        f.write(f"<li>parametr identyfikator liczonej wartości 2 : {args.val_key2}</li>\n")
+        f.write(f"<li>parametr indeks kandydata: {args.cand_index}</li>\n")
+        if args.cand_index is not None:
+            candidate_name =  df_orig['candidate_name'].iloc[0]
+            f.write(f"<li>Imię i nazwisko kandydata: {candidate_name}</li>\n")
+        f.write("</ul>\n")
+
+        sum_val1 = df_orig['counted_votes'].sum()
+        agg_val1_txt = 'suma'
+        if args.val_key == 'frekwencja':
+            agg_val1_txt = 'średnia'
+            sum_val1 = df_orig['counted_votes'].mean()
+
+        total_votes = df_orig['total_valid_votes'].sum()
+        f.write("<h1>Statystyki:</h1>\n")
+        f.write("<ul>\n")
+        f.write(f"<li>suma wszystkich głosów ważnych: {total_votes} </li>\n")
+        f.write(f"<li>{agg_val1_txt} wartości 1 ({args.val_key}) = {sum_val1}</li>\n")
+        if agg_val1_txt == 'suma':
+            sum_val1_perc = 0
+            if total_votes:
+                sum_val1_perc = int(10000 * (sum_val1 / total_votes)) / 100
+            f.write(f"<li>procent głosów wartości 1 ({args.val_key}) = {sum_val1_perc}%</li>\n")
+
+        if args.val_key2:
+            sum_val2 = None
+            f.write(f"<li>suma wartości 2 ({args.val_key2}) = {sum_val2} </li>\n")
+        f.write("</ul>\n")
+
 
         raw_data = df_to_list_of_lists(df, ['obwod_link', 'powiat_name', 'gmina_name', 'total_possible_voters', 'total_possible_voters_rank', 'freq_vote', 'freq_vote_rank', 'perc_val', 'perc_rank'])
 
@@ -504,15 +550,15 @@ def main():
         args.invert_val,
         args.invert_val2)
 
-    data_for_map = preprocess_data_for_map(data_for_map, args)
+    preprocessed_data_for_map = preprocess_data_for_map(data_for_map, args)
     if args.map_type == 'clustered':
-        create_map_cluster(data_for_map, args.output)
+        create_map_cluster(preprocessed_data_for_map, args.output)
     elif args.map_type == 'normal':
-        create_map_normal(data_for_map, args.output)
+        create_map_normal(preprocessed_data_for_map, args.output)
     else:
         raise Exception(f"Unknown map type in args {args.map_type}")
 
-    dump_raw_data(args.output, data_for_map)
+    dump_raw_data(args, preprocessed_data_for_map, data_for_map)
 
 
 main()
