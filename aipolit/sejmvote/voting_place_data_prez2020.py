@@ -71,6 +71,7 @@ class VotingPlaceDataPrez2020(VotingPlaceData):
 
             obwod_id = self.create_id_from_entry(parsed_entry)
             parsed_entry['obwod_id'] = obwod_id
+            self.add_powiat_for_okreg(parsed_entry[self.okreg_key_name], parsed_entry['powiat_name'])
             self.obwod_id_to_index[obwod_id] = len(self.voting_place_data)
             self.voting_place_data.append(parsed_entry)
         logging.info("Loaded %i voting places from raw data file", len(self.voting_place_data))

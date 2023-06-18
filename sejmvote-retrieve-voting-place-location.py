@@ -20,6 +20,10 @@ def parse_arguments():
         help='Limit query only to data from the given sejm okreg')
 
     parser.add_argument(
+        '--teryt', '-t',
+        help='Limit query only to data from the given teryt gmina id')
+
+    parser.add_argument(
         '--city', '-c',
         help='Limit query only to data from the given city')
 
@@ -66,6 +70,9 @@ def create_obwod_ids_to_process(data, args):
             # warning for compatibility with sejm2019, prez2020, etc.!!!
             if entry[data.okreg_key_name] != args.okreg:
                 continue
+        if args.teryt:
+            if entry['teryt_gminy'] != args.teryt:
+                continue
 
         if args.limit:
             if len(result) >= args.limit:
@@ -81,6 +88,12 @@ def create_obwod_ids_to_process(data, args):
 
 def main():
     args = parse_arguments()
+    logging.info(
+        "==> Start retrieval of elections_id %s okreg %s city %s teryt id %s",
+        args.elections_id,
+        args.okreg,
+        args.city,
+        args.teryt)
 
     data = create_voting_place_data(args.elections_id)
     obwod_id_to_process = create_obwod_ids_to_process(data, args)

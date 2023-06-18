@@ -1,5 +1,5 @@
 import logging
-from collections import OrderedDict
+from collections import OrderedDict, defaultdict
 from aipolit.utils.text import read_csv
 from aipolit.utils.globals import \
      AIPOLIT_SEJM_ELECTION_VOTING_PLACE_RAW_DATA_FP, \
@@ -17,12 +17,19 @@ class VotingPlaceData:
         self.voting_place_data = []
         self.obwod_id_to_index = dict()
         self.location_data = None
+        self.okreg_number_to_powiats = defaultdict(set)
         # workaround to allow use different keys in derived classes
         self.okreg_key_name = 'sejm_okreg_number'
 
     @classmethod
     def create_id_from_entry(cls, entry):
         return entry['teryt_gminy'] + '===' + entry['obwod_number']
+
+    def get_powiats_for_okreg(self, okreg):
+        return list(sorted(self.okreg_number_to_powiats.get(okreg, {})))
+
+    def add_powiat_for_okreg(self, okreg, powiat_name):
+        self.okreg_number_to_powiats[okreg].add(powiat_name)
 
     def get_voting_place_by_id(self, obwod_id):
         index = self.obwod_id_to_index[obwod_id]

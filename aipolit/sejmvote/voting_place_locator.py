@@ -45,21 +45,30 @@ class VotingPlaceLocator:
                 continue
             queried_streets.add(cand_street)
             query['street'] = cand_street
-            location = self.locator.geocode(query)
+            location = None
+            try:
+                location = self.locator.geocode(query)
+            except Exception as e:
+                logging.error("PROBLEM WITH RETRIEVAL OF QUERY: %s\nEXCEPTION: %s", query, e)
+
             if location is not None:
                 return (location.latitude, location.longitude)
         return None
 
     def _create_street_cands(self, voting_place):
         cands = []
-        cands.append(f"{voting_place['street_number']} {voting_place['street_name']}")
-        cands.append(f"{voting_place['street_name']}")
+        if voting_place['street_name']:
+            cands.append(f"{voting_place['street_number']} {voting_place['street_name']}")
+            cands.append(f"{voting_place['street_name']}")
 
-        street_name = voting_place['street_name']
-        street_name_replaced = re.sub(r"^\s*(ul|al|os|pl)\.\s*", "", street_name)
-        if street_name_replaced != street_name:
-            cands.append(f"{voting_place['street_number']} {street_name_replaced}")
-            cands.append(f"{street_name_replaced}")
+            street_name = voting_place['street_name']
+            street_name_replaced = re.sub(r"^\s*(ul|al|os|pl)\.\s*", "", street_name)
+            if street_name_replaced != street_name:
+                cands.append(f"{voting_place['street_number']} {street_name_replaced}")
+                cands.append(f"{street_name_replaced}")
+        else:
+            cands.append(f"{voting_place['street_number']}")
+#            cands.append(f"{voting_place['city']} {voting_place['street_number']}")
 
         return cands
 
