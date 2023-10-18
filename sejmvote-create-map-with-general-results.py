@@ -50,7 +50,7 @@ def parse_arguments():
         default=None,
         help='Limit query only to data from the given powiat name')
 
-    POSSIBLE_VAL_KEY_CHOICES = ['opozycja', 'konfederacja', 'pis', 'ko', 'psl', 'sld', 'frekwencja', '1_tura']
+    POSSIBLE_VAL_KEY_CHOICES = ['opozycja', 'konfederacja', 'pis', 'ko', 'psl', 'sld', 'frekwencja', '1_tura', '3d']
     parser.add_argument(
         '--val-key', '-vk',
         required=True,
@@ -194,7 +194,8 @@ def create_counted_value(val_key, general_results_entry, candidate_results_data,
     counted = 0
     if val_key == 'opozycja':
         counted = general_results_entry['total_votes_lista_ko'] \
-          + general_results_entry['total_votes_lista_psl'] \
+          + general_results_entry.get('total_votes_lista_psl', 0) \
+          + general_results_entry.get('total_votes_lista_3d', 0) \
           + general_results_entry['total_votes_lista_sld']
     elif val_key == 'konfederacja':
         counted = general_results_entry['total_votes_lista_konfederacja']
@@ -204,6 +205,8 @@ def create_counted_value(val_key, general_results_entry, candidate_results_data,
         counted = general_results_entry['total_votes_lista_ko']
     elif val_key == 'psl':
         counted = general_results_entry['total_votes_lista_psl']
+    elif val_key == '3d':
+        counted = general_results_entry['total_votes_lista_3d']
     elif val_key == 'sld':
         counted = general_results_entry['total_votes_lista_sld']
     elif val_key == '1_tura':
