@@ -1,1 +1,1 @@
-AVAILABLE_ELECTIONS_IDS = {'sejm2019', 'prez2020'}
+AVAILABLE_ELECTIONS_IDS = {'sejm2019', 'prez2020', 'sejm2023'}
