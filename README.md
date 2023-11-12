@@ -90,3 +90,9 @@ Very similar to previous notebook, but the classification task is different - th
 tweets for all MPs from the given year, and try to identify who wrote the tweet.
 
 Then the classifier is used to identify characteristic words.
+
+007_dzielnice_krakowa_wybory2023
+--------------------------------
+
+This notebook creates data for XLSX with Sejm2023 election results summarized for each
+Kraków district (useful to analyse it for regional elections).

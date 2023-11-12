@@ -102,8 +102,6 @@ class VotingSejmCandidateResults:
             self.obwod_id_to_index[obwod_id] = len(self.results_data)
             self.results_data.append(parsed_entry)
 
-        print(self.results_data[0]['obwod_id'])
-
     def _parse_raw_header(self, row):
         current_lista_id = None
         current_candidates_raw = []

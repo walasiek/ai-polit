@@ -111,12 +111,18 @@ def read_tsv(fp, header=None):
                 result.append(entry)
     return result
 
-def save_tsv(fp, data, header):
+def save_tsv(fp, data, header, labels=None):
     """
     Saves data to TSV file assuming that 'data' is list of dicts with keys from 'header'
+    If labels given then uses them as first row header
     """
     with open(fp, "w") as f:
-        f.write("\t".join(header))
+        if labels is not None:
+            f.write("\t".join(labels))
+            assert len(labels) == len(header)
+        else:
+            f.write("\t".join(header))
+
         f.write("\n")
 
         for e in data:
