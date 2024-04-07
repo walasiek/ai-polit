@@ -81,3 +81,9 @@ AIPOLIT_SEJM2023_ELECTION_VOTING_PLACE_DATA_DIR = os.path.join(AIPOLIT_SEJM2023_
 # Obwody głosowania -> CSV
 # unzip the file
 AIPOLIT_SEJM2023_ELECTION_VOTING_PLACE_RAW_DATA_FP = os.path.join(AIPOLIT_SEJM2023_ELECTION_VOTING_PLACE_DATA_DIR, 'obwody_glosowania_utf8.csv')
+
+#====================================
+# SEJM 2023+ Session Transcripts
+#====================================
+
+AIPOLIT_10TERM_SEJM_TRANSCRIPTS_DIR = os.path.join(AIPOLIT_DATA_DIR, 'hipisejm-transcripts')
