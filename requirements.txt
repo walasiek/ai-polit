@@ -17,3 +17,4 @@ geopandas
 folium
 openpyxl
 hipisejm
+sentence-splitter
