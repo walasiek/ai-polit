@@ -18,3 +18,4 @@ folium
 openpyxl
 hipisejm
 sentence-splitter
+plotly

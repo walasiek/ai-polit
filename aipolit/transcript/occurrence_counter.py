@@ -1,5 +1,4 @@
 import re
-from tqdm import tqdm
 from typing import Union, Optional, List
 from sentence_splitter import SentenceSplitter
 from hipisejm.stenparser.transcript import SessionTranscript, SpeechReaction, SpeechInterruption, SessionSpeech
@@ -80,7 +79,7 @@ class ListOccurrenceCounter:
         result = []
         self._init_cache()
 
-        for session_speech in tqdm(transcript.session_content):
+        for session_speech in transcript.session_content:
             self._count_in_speech(result, session_speech)
 
         return result
