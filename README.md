@@ -32,6 +32,7 @@ The following topics are handled in this repository:
 - *sejmvote* - scripts to analyze results from Sejm Elections
 - *polittweets* - scripts to analyze political tweets
 - *ttgen* - tweet generation algorithms
+- *transcript* - analytics based on hipisejm transcripts
 - *utils* - helper scripts and utilities
 
 Topic: sejmvote
