@@ -27,20 +27,18 @@ class PhraseOccurence:
                  sentence: str,
                  utt_ref: Union[str, SpeechReaction, SpeechInterruption],
                  speech_ref: SessionSpeech,
-                 prev_sentence: Optional[str],
-                 prev_sentence_speaker: Optional[str]):
+                 prev_sentence: Optional[str]):
         self.speaker = speaker
         self.sentence = sentence
         self.utt_ref = utt_ref
         self.speech_ref = speech_ref
         self.prev_sentence = prev_sentence
-        self.prev_sentence_speaker = prev_sentence_speaker
 
     def __str__(self):
         full_txt = f"{self.speaker}: {self.sentence}"
 
         if isinstance(self.utt_ref, SpeechInterruption):
-            inter_txt = f" (przerywając wypowiedź <{self.prev_sentence_speaker}> o treści: {self.prev_sentence})"
+            inter_txt = f" (przerywając wypowiedź <{self.speech_ref.speaker}> o treści: {self.prev_sentence})"
             full_txt = full_txt + inter_txt
         return full_txt
 
@@ -57,24 +55,21 @@ class ListOccurrenceCounter:
         self.cache = dict()
         self._init_cache()
 
-    def run_count(self, transcript: SessionTranscript):
+    def run_count(self, transcript: SessionTranscript) -> List[PhraseOccurence]:
         """
         Returns list of counted occurrencies.
         Steps:
         1. Split into sentences using sentence-splitter
         2. Regex search for "hańba" occurrencies (and some variants like inflecional forms)
 
-        Returns list consisting of entries (occurrence).
-        Each occurrence is a tuple:
-        (speaker, sentence, utt_ref, speech_ref, prev_sentence, prev_sentence_speaker)
+        Returns list consisting of entries (PhraseOccurence).
 
         Where:
         - speaker (str) - name of the speaker, who used "Hańba"
         - sentence (str) - sentence in which "Hańba" occured
         - utt_ref (str, SessionReaction, Session Interruption) - reference to full utterance object
         - speech_ref (SessionSpeech) - reference to full speech during which Hańba occurred
-        - prev_sentence (str) - sentence preceeding occurrence of Hańba
-        - prev_sentence_speaker (str) - speaker of the preceeding sentence (may be the same as speaker)
+        - prev_sentence (str) - sentence preceeding occurrence of Hańba (only non-reaction/interruption sentences are counted)
         """
         result = []
         self._init_cache()
@@ -99,7 +94,8 @@ class ListOccurrenceCounter:
             sentences = self._split_utt_to_sentences(utt)
             for sentence in sentences:
                 self._check_searched_in_sentence(result, sentence, utt, session_speech)
-                self.cache['prev_sentence'] = sentence
+                if isinstance(utt, str):
+                    self.cache['prev_sentence'] = sentence
             self.cache['prev_utt'] = utt
             self.cache['prev_utt_speech'] = session_speech
 
@@ -132,6 +128,5 @@ class ListOccurrenceCounter:
     def _new_occurrence(self, result, sentence, utt_ref, speech_ref):
         speaker = get_speaker_for_utt(utt_ref, speech_ref)
         prev_sentence = self.cache['prev_sentence']
-        prev_sentence_speaker = get_speaker_for_utt(self.cache['prev_utt'], self.cache['prev_utt_speech'])
-        occurrence = PhraseOccurence(speaker, sentence, utt_ref, speech_ref, prev_sentence, prev_sentence_speaker)
+        occurrence = PhraseOccurence(speaker, sentence, utt_ref, speech_ref, prev_sentence)
         result.append(occurrence)

@@ -23,3 +23,15 @@ def test_phrases_occurrence_count():
     counter = ListOccurrenceCounter(searched_tokens)
     result = counter.run_count(sample_transcript)
     assert len(result) == 3, "total number of occurrences found"
+
+
+def test_occurrence_correct_prev_sentence_with_double_interruptions():
+    searched_tokens = [
+        'Ha, ha, ha',
+    ]
+    counter = ListOccurrenceCounter(searched_tokens)
+    result = counter.run_count(sample_transcript)
+    assert len(result) == 12, "total number of occurrences found"
+
+    occur_with_double = result[1]
+    assert 'Bardzo proszę, panie pośle' in occur_with_double.prev_sentence, "Should correct show prev_sentence when two interruptions appear"
