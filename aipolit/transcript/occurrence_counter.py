@@ -102,24 +102,37 @@ class ListOccurrenceCounter:
     def _count_in_speech(self, result, session_speech):
         speech_speaker = session_speech.speaker
         for utt_index, utt in enumerate(session_speech.content):
-            sentence_splits = self.utt_sentence_splitter.split_utt_to_sentences(utt)
-            for sentence_split in sentence_splits:
-                sentence = sentence_split[0]
-                sentence_start_index_in_utt = sentence_split[1]
-                self._check_searched_in_sentence(result, sentence, sentence_start_index_in_utt, utt, utt_index, session_speech)
+            sentences = self.utt_sentence_splitter.split_utt_to_sentences(utt)
+            sentences_cache = {
+                'sentence_index': 0,
+                'all_sentences_starting_indexes': None,
+                'all_sentences': sentences,
+            }
+            for i, sentence in enumerate(sentences):
+                sentences_cache['sentence_index'] = i
+                self._check_searched_in_sentence(result, sentence, sentences_cache, utt, utt_index, session_speech)
                 if isinstance(utt, str):
                     self.cache['prev_sentence'] = sentence
             self.cache['prev_utt'] = utt
             self.cache['prev_utt_speech'] = session_speech
 
-    def _check_searched_in_sentence(self, result, sentence, sentence_start_index_in_utt, utt, utt_index, session_speech):
+    def _check_searched_in_sentence(self, result, sentence, sentences_cache, utt, utt_index, session_speech):
         pos = 0
         keep_procesing = True
+
+        sentence_start_index_in_utt = None
+
         while keep_procesing:
             matched = self.searched_regex.search(sentence, pos=pos)
             if matched:
                 keep_procesing = True
                 pos = matched.start() + 1
+
+                if sentences_cache['all_sentences_starting_indexes'] is None:
+                    all_sentences = sentences_cache['all_sentences']
+                    sentences_cache['all_sentences_starting_indexes'] = self.utt_sentence_splitter.estimate_start_index_of_each_sentence_matching(utt, all_sentences)
+                sentence_start_index_in_utt = sentences_cache['all_sentences_starting_indexes'][sentences_cache['sentence_index']]
+
                 self._new_occurrence(result, sentence, sentence_start_index_in_utt, utt, utt_index, matched.start(), matched.end(), session_speech)
             else:
                 keep_procesing = False

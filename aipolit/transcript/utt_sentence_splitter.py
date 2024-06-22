@@ -1,5 +1,6 @@
 from typing import Union, List, Tuple
 from hipisejm.stenparser.transcript import SpeechReaction, SpeechInterruption
+from hipisejm.stenparser.transcript_utils import get_utt_text
 from sentence_splitter import SentenceSplitter
 
 
@@ -18,25 +19,21 @@ class UttSentenceSplitter:
         self.splitter = SentenceSplitter(language='pl')
 
     def split_utt_to_sentences(self, utt: Union[str, SpeechReaction, SpeechInterruption]) -> List[Tuple[str, int]]:
-        if isinstance(utt, str):
-            return self.split_string_to_sentences(utt)
-        elif isinstance(utt, SpeechReaction):
-            return self.split_string_to_sentences(utt.reaction_text)
-        elif isinstance(utt, SpeechInterruption):
-            return self.split_string_to_sentences(utt.text)
-        else:
-            raise ValueError(f"Unknown object utt in SessionSpeech: {utt}")
+        return self.split_string_to_sentences(get_utt_text(utt))
 
-    def split_string_to_sentences(self, text: str) -> List[Tuple[str, int]]:
-        raw_split = self.splitter.split(text=text)
+    def estimate_start_index_of_each_sentence_matching(self, utt: Union[str, SpeechReaction, SpeechInterruption], raw_split: List[str]) -> List[int]:
+        text = get_utt_text(utt)
         current_index = 0
         result = []
         for sent in raw_split[:-1]:
-            result.append((sent, current_index))
+            result.append(current_index)
             current_leftover = text[current_index + len(sent):]
             current_leftover_strip = current_leftover.lstrip()
 
             current_index = current_index + len(sent) + (len(current_leftover) - len(current_leftover_strip))
-        result.append((raw_split[-1], current_index))
-
+        if len(raw_split) > 0:
+            result.append(current_index)
         return result
+
+    def split_string_to_sentences(self, text: str) -> List[str]:
+        return self.splitter.split(text=text)
