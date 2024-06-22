@@ -16,6 +16,26 @@ def test_simple_occurrence_count():
     assert len(result) == 5, "total number of occurrences found"
 
 
+def test_detailed_occurrence_count():
+    searched_tokens = [
+        'Na sekretarzy dzisiejszych obrad',
+    ]
+    counter = ListOccurrenceCounter(searched_tokens)
+    result = counter.run_count(sample_transcript)
+    assert len(result) == 1, "total number of occurrences found"
+
+    occurrence = result[0]
+
+    assert occurrence.speaker == "Marszałek Szymon Hołownia"
+    assert occurrence.sentence == "Na sekretarzy dzisiejszych obrad powołuję posłów Jolantę Niezgodzką, Aleksandrę Karolinę Wiśniewską, Filipa Kaczyńskiego i Łukasza Kmitę."
+    assert occurrence.matched_utt_index == 2
+    # TODO to może być trudne
+    #assert occurrence.sentence_start_index_in_utt == 21
+    assert occurrence.sentence_start_match == 0
+    assert occurrence.sentence_end_match == len(searched_tokens[0])
+    assert occurrence.prev_sentence == "Dzień dobry państwu."
+
+
 def test_phrases_occurrence_count():
     searched_tokens = [
         'polski rząd',
