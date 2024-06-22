@@ -1,8 +1,7 @@
 import re
 from typing import Union, Optional, List
-from sentence_splitter import SentenceSplitter
 from hipisejm.stenparser.transcript import SessionTranscript, SpeechReaction, SpeechInterruption, SessionSpeech
-
+from aipolit.transcript.utt_sentence_splitter import UttSentenceSplitter
 
 def get_speaker_for_utt(utt, speech):
     """
@@ -49,7 +48,7 @@ class ListOccurrenceCounter:
     """
     def __init__(self, searched_tokens: List[str]):
         self.searched_tokens = searched_tokens
-        self.splitter = SentenceSplitter(language='pl')
+        self.utt_sentence_splitter = UttSentenceSplitter()
         self.searched_regex = self._create_searched_regex()
         # cache objects
         self.cache = dict()
@@ -91,26 +90,13 @@ class ListOccurrenceCounter:
     def _count_in_speech(self, result, session_speech):
         speech_speaker = session_speech.speaker
         for utt in session_speech.content:
-            sentences = self._split_utt_to_sentences(utt)
+            sentences = self.utt_sentence_splitter.split_utt_to_sentences(utt)
             for sentence in sentences:
                 self._check_searched_in_sentence(result, sentence, utt, session_speech)
                 if isinstance(utt, str):
                     self.cache['prev_sentence'] = sentence
             self.cache['prev_utt'] = utt
             self.cache['prev_utt_speech'] = session_speech
-
-    def _split_utt_to_sentences(self, utt):
-        if isinstance(utt, str):
-            return self._split_string_to_sentences(utt)
-        elif isinstance(utt, SpeechReaction):
-            return self._split_string_to_sentences(utt.reaction_text)
-        elif isinstance(utt, SpeechInterruption):
-            return self._split_string_to_sentences(utt.text)
-        else:
-            raise ValueError(f"Unknown object utt in SessionSpeech: {utt}")
-
-    def _split_string_to_sentences(self, text: str):
-        return self.splitter.split(text=text)
 
     def _check_searched_in_sentence(self, result, sentence, utt, session_speech):
         pos = 0
