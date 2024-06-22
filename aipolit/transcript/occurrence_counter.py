@@ -1,20 +1,8 @@
 import re
 from typing import Union, Optional, List
 from hipisejm.stenparser.transcript import SessionTranscript, SpeechReaction, SpeechInterruption, SessionSpeech
+from hipisejm.stenparser.transcript_utils import get_speaker_for_utt
 from aipolit.transcript.utt_sentence_splitter import UttSentenceSplitter
-
-def get_speaker_for_utt(utt, speech):
-    """
-    Helper method for Transcript processing
-    """
-    if isinstance(utt, str):
-        return speech.speaker
-    elif isinstance(utt, SpeechReaction):
-        return None
-    elif isinstance(utt, SpeechInterruption):
-        return utt.interrupted_by_speaker
-    else:
-        raise ValueError(f"Unknown object utt in SessionSpeech: {utt}")
 
 
 class PhraseOccurence:

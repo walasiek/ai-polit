@@ -16,6 +16,6 @@ geopy
 geopandas
 folium
 openpyxl
-hipisejm
+hipisejm>=0.2.3
 sentence-splitter
 plotly
