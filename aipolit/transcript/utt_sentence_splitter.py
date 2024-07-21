@@ -18,7 +18,10 @@ class UttSentenceSplitter:
     def __init__(self):
         self.splitter = SentenceSplitter(language='pl')
 
-    def split_utt_to_sentences(self, utt: Union[str, SpeechReaction, SpeechInterruption]) -> List[Tuple[str, int]]:
+    def split_utt_to_sentences(self, utt: Union[str, SpeechReaction, SpeechInterruption]) -> List[str]:
+        """
+        Returns list of splited sentences (strings).
+        """
         return self.split_string_to_sentences(get_utt_text(utt))
 
     def estimate_start_index_of_each_sentence_matching(self, utt: Union[str, SpeechReaction, SpeechInterruption], raw_split: List[str]) -> List[int]:

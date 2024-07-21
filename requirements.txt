@@ -19,3 +19,6 @@ openpyxl
 hipisejm>=0.2.3
 sentence-splitter
 plotly
+keybert
+keybert[flair]
+openai
