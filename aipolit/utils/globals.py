@@ -87,3 +87,9 @@ AIPOLIT_SEJM2023_ELECTION_VOTING_PLACE_RAW_DATA_FP = os.path.join(AIPOLIT_SEJM20
 #====================================
 
 AIPOLIT_10TERM_SEJM_TRANSCRIPTS_DIR = os.path.join(AIPOLIT_DATA_DIR, 'hipisejm-transcripts')
+
+#====================================
+# Cache dir
+#====================================
+
+AIPOLIT_CACHE_DIR = os.path.join(AIPOLIT_DATA_DIR, "cache")
