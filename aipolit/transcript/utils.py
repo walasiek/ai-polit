@@ -18,7 +18,6 @@ def load_transcripts(fixed_dir=None):
     if processing_dir is None:
         processing_dir=os.path.join(AIPOLIT_10TERM_SEJM_TRANSCRIPTS_DIR, TRANSCRIPT_TYPE_TO_PROCESS)
 
-    print("AAAAAAAAAA", processing_dir)
     transcripts = []
     for filename in sorted(os.listdir(processing_dir)):
         if re.match(r"^.*\.xml$", filename):
