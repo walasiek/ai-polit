@@ -1,7 +1,7 @@
 from hipisejm.stenparser.transcript import SessionTranscript
 from aipolit.transcript.occurrence_counter import ListOccurrenceCounter
 
-sample_transcript_fp = "resources/test_data/sample_transcript_06_a_ksiazka.xml"
+sample_transcript_fp = "resources/test_data/transcripts_sejm/sample_transcript_06_a_ksiazka.xml"
 sample_transcript = SessionTranscript()
 sample_transcript.load_from_xml(sample_transcript_fp)
 
