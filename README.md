@@ -18,9 +18,11 @@ Scripts
 
 References to scripts. We use the following naming convention for scripts:
 
-    {TOPIC_PREFIC}-{COMMAND_NAME}.py
+    aipolit-{TOPIC_PREFIC}-{COMMAND_NAME}.py
 
 Where TOPIC_PREFIX is one of the topics mentioned later in this document (check section *Topics*).
+
+Scripts are stored in "bin/" directory.
 
 
 Topics
