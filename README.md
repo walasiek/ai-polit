@@ -68,6 +68,28 @@ Topic: utils
 TBD
 
 
+Topic: Transcripts
+==================
+
+Analysing transcripts is an interesting way to understand langauge of Polish politics.
+In `aipolit/transcript` you will find several scripts which aim to analyse discourse of the Polish Parliament.
+It is based on the data parsed by `hipisejm` module (so please refer to its README for details).
+
+
+bin/aipolit-transcript-affiliation-www-parser.py
+------------------------------------------------
+
+Finding Parliament speakers political affiliation is not straightforward task.
+I wrote special class `aipolit/transcript/person_affiliation.py` to handle that (check unit tests for its usage)
+but it requires data to work correctly. The script `bin/aipolit-transcript-affiliation-www-parser.py` help to build such data.
+
+
+In general you should:
+1. Run the script to produce new file to be uploaded (check script description for details)
+2. Review file produced by the script
+3. Copy it to the repository.
+
+
 Notebooks
 =========
 

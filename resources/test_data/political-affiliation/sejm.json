@@ -1,0 +1,63 @@
+{
+    "poslowie": [
+        {
+            "f_name": "Jan",
+            "s_name": "Kowalski",
+            "clubs": [
+                {
+                    "club_name": "X",
+                    "from_date": "2024-01-01"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jan",
+            "s_name": "Nowak",
+            "clubs": [
+                {
+                    "club_name": "X",
+                    "to_date": "2024-10-01"
+                },
+                {
+                    "club_name": "Y",
+                    "from_date": "2024-10-01",
+                    "to_date": "2024-11-01"
+                },
+                {
+                    "club_name": "Z",
+                    "from_date": "2024-11-01"
+                }
+
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jan",
+            "s_name": "Smith",
+            "clubs": [
+                {
+                    "club_name": "X",
+                    "to_date": "2024-10-01"
+                },
+                {
+                    "club_name": "Y",
+                    "from_date": "2024-10-01"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-11-01",
+            "deactivate_reason": "utrata prawa wybieralności"
+        },
+        {
+            "f_name": "Jan",
+            "s_name": "Kropek",
+            "clubs": [
+                {
+                    "club_name": "X"
+                }
+            ],
+            "active": true
+        }
+    ]
+}

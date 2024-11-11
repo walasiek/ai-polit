@@ -19,6 +19,10 @@ def parse_arguments():
         help='Fixed directory to load transcripts, overrides defaults (useful for tests)')
 
     parser.add_argument(
+        '--output', '-o',
+        help='If defined, then saves dump into given file.')
+
+    parser.add_argument(
         '--what', '-w',
         type=str,
         nargs='+',
@@ -29,14 +33,22 @@ def parse_arguments():
     return args
 
 
+def run_query(transcript_query, args, filehandle=None):
+    transcript_query.query(args.what, to_filehandle=filehandle)
+
+
 def main():
     args = parse_arguments()
 
     transcript_query = TranscriptQuery(fixed_transcript_dir=args.fixed_dir)
     logging.info("Loaded %i transcript files to query.", transcript_query.count_transcripts())
 
-    # TODO
-    transcript_query.query(args.what)
+    if args.output:
+        logging.info("Saving dump to file: %s", args.output)
+        with open(args.output, "w") as f:
+            run_query(transcript_query, args, f)
+    else:
+        run_query(transcript_query, args)
 
 
 main()

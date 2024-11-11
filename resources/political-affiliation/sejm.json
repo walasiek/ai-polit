@@ -1,0 +1,5506 @@
+{
+    "poslowie": [
+        {
+            "f_name": "Adam",
+            "s_name": "Andruszkiewicz",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Adam",
+            "s_name": "Dziedzic",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Adam",
+            "s_name": "Gomoła",
+            "clubs": [
+                {
+                    "club_name": "niezależni",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Adam",
+            "s_name": "Krzemiński",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Adam",
+            "s_name": "Luboński",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Adam",
+            "s_name": "Szłapka",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Adrian",
+            "s_name": "Witczak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Adrian",
+            "s_name": "Zandberg",
+            "clubs": [
+                {
+                    "club_name": "Razem",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Agata",
+            "s_name": "Wojtyszek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Agnieszka Anna",
+            "s_name": "Soin",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Agnieszka",
+            "s_name": "Buczyńska",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Agnieszka",
+            "s_name": "Dziemianowicz-Bąk",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Agnieszka",
+            "s_name": "Górska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Agnieszka",
+            "s_name": "Hanajczyk",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Agnieszka Maria",
+            "s_name": "Kłopotek",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Agnieszka",
+            "s_name": "Pomaska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Agnieszka",
+            "s_name": "Ścigaj",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Aleksander Mikołaj",
+            "s_name": "Mrówczyński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Aleksander",
+            "s_name": "Miszalski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-04-23",
+            "deactivate_reason": "Wybrany na funkcję Prezydenta Miasta Krakowa"
+        },
+        {
+            "f_name": "Aleksandra",
+            "s_name": "Gajewska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Aleksandra Karolina",
+            "s_name": "Wiśniewska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Aleksandra",
+            "s_name": "Kot",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Aleksandra",
+            "s_name": "Leo",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Alicja",
+            "s_name": "Chybicka",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Alicja",
+            "s_name": "Łepkowska-Gołaś",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Alicja",
+            "s_name": "Łuczak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Andrzej",
+            "s_name": "Adamczyk",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Andrzej",
+            "s_name": "Domański",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Andrzej",
+            "s_name": "Gawron",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Andrzej",
+            "s_name": "Grzyb",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Andrzej",
+            "s_name": "Gut-Mostowy",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Andrzej",
+            "s_name": "Kosztowniak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Andrzej",
+            "s_name": "Kryj",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Andrzej",
+            "s_name": "Szejna",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Andrzej",
+            "s_name": "Szewiński",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Andrzej Tomasz",
+            "s_name": "Zapałowski",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Andrzej",
+            "s_name": "Śliwka",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anita",
+            "s_name": "Czerwińska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anita",
+            "s_name": "Kucharska-Dziedzic",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna",
+            "s_name": "Baluch",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-12-06"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna",
+            "s_name": "Dąbrowska-Banaszek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna Ewa",
+            "s_name": "Cicholska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna",
+            "s_name": "Gembicka",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna",
+            "s_name": "Krupka",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna",
+            "s_name": "Kwiecień",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna Maria",
+            "s_name": "Żukowska",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna",
+            "s_name": "Milczanowska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna",
+            "s_name": "Paluch",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna",
+            "s_name": "Pieczarka",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna",
+            "s_name": "Schmidt",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna",
+            "s_name": "Sobolak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Anna",
+            "s_name": "Wojciechowska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Antoni",
+            "s_name": "Macierewicz",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Apoloniusz",
+            "s_name": "Tajner",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Arkadiusz",
+            "s_name": "Czartoryski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Arkadiusz",
+            "s_name": "Marchewka",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Arkadiusz",
+            "s_name": "Mularczyk",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Arkadiusz",
+            "s_name": "Myrcha",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Arkadiusz",
+            "s_name": "Sikora",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Artur",
+            "s_name": "Chojecki",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Artur Daniel",
+            "s_name": "Gierada",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Artur Jarosław",
+            "s_name": "Łącki",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Artur",
+            "s_name": "Soboń",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2023-12-06",
+            "deactivate_reason": "Powołany na członka Zarządu Narodowego Banku Polskiego"
+        },
+        {
+            "f_name": "Artur",
+            "s_name": "Szałabawka",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Barbara",
+            "s_name": "Bartuś",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Barbara",
+            "s_name": "Dolniak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Barbara",
+            "s_name": "Grygorcewicz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Barbara",
+            "s_name": "Nowacka",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Barbara",
+            "s_name": "Okuła",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Barbara",
+            "s_name": "Oliwiecka",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Bartosz",
+            "s_name": "Arłukowicz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Bartosz Józef",
+            "s_name": "Kownacki",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Bartosz",
+            "s_name": "Romowicz",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Bartosz",
+            "s_name": "Zawieja",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Bartłomiej",
+            "s_name": "Dorywalski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Bartłomiej",
+            "s_name": "Pejo",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Bartłomiej",
+            "s_name": "Sienkiewicz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Bartłomiej",
+            "s_name": "Wróblewski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Bogdan Andrzej",
+            "s_name": "Zdrojewski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Bogusław",
+            "s_name": "Wołoszański",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Bolesław",
+            "s_name": "Piecha",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Borys",
+            "s_name": "Budka",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Bożena",
+            "s_name": "Borys-Szopa",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Bożena",
+            "s_name": "Lisowska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Bożena",
+            "s_name": "Żelazowska",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Bożenna",
+            "s_name": "Hołownia",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Bronisław",
+            "s_name": "Foltyn",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Cezary",
+            "s_name": "Tomczyk",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Czesław",
+            "s_name": "Hoc",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Czesław",
+            "s_name": "Mroczek",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Czesław",
+            "s_name": "Siekierski",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Daniel",
+            "s_name": "Milewski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Danuta",
+            "s_name": "Jazłowiecka",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Daria",
+            "s_name": "Gosek-Popiołek",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Dariusz",
+            "s_name": "Joński",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Dariusz",
+            "s_name": "Klimczak",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Dariusz",
+            "s_name": "Matecki",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Dariusz",
+            "s_name": "Piontkowski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Dariusz",
+            "s_name": "Stefaniuk",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Dariusz",
+            "s_name": "Wieczorek",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Dominik",
+            "s_name": "Jaśkowiec",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-04-23"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Dominika",
+            "s_name": "Chorosińska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Donald",
+            "s_name": "Tusk",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Dorota",
+            "s_name": "Arciszewska-Mielewczyk",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Dorota",
+            "s_name": "Marek",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Dorota",
+            "s_name": "Niedziela",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Dorota",
+            "s_name": "Olko",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Dorota",
+            "s_name": "Łoboda",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Edward",
+            "s_name": "Siarka",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Elżbieta Anna",
+            "s_name": "Polak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Elżbieta",
+            "s_name": "Burkiewicz",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Elżbieta",
+            "s_name": "Duda",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Elżbieta",
+            "s_name": "Gapińska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Elżbieta",
+            "s_name": "Gelert",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Elżbieta",
+            "s_name": "Witek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Ewa",
+            "s_name": "Kołodziej",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Ewa",
+            "s_name": "Leniart",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Ewa",
+            "s_name": "Malik",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Ewa",
+            "s_name": "Schädler",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Ewa",
+            "s_name": "Szymanowska",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Filip",
+            "s_name": "Kaczyński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Franciszek",
+            "s_name": "Sterczewski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Fryderyk Sylwester",
+            "s_name": "Kapinos",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Gabriela",
+            "s_name": "Lenartowicz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Grzegorz Adam",
+            "s_name": "Płaczek",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Grzegorz",
+            "s_name": "Braun",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Grzegorz",
+            "s_name": "Gaża",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Grzegorz",
+            "s_name": "Lorek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Grzegorz",
+            "s_name": "Macko",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Grzegorz",
+            "s_name": "Matusiak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Grzegorz",
+            "s_name": "Napieralski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Grzegorz",
+            "s_name": "Piechowiak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Grzegorz",
+            "s_name": "Puda",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Grzegorz",
+            "s_name": "Rusiecki",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-04-10",
+            "deactivate_reason": "Wybrany na funkcję Prezydenta Miasta Leszna"
+        },
+        {
+            "f_name": "Grzegorz",
+            "s_name": "Woźniak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Henryk",
+            "s_name": "Kiepura",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Henryk",
+            "s_name": "Kowalczyk",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Henryk",
+            "s_name": "Smolarz",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Henryk",
+            "s_name": "Szopiński",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Henryka",
+            "s_name": "Krzywonos-Strycharska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Ireneusz",
+            "s_name": "Raś",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Ireneusz",
+            "s_name": "Zyska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Iwona Ewa",
+            "s_name": "Arent",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Iwona",
+            "s_name": "Hartwich",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Iwona",
+            "s_name": "Karolewska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Iwona Maria",
+            "s_name": "Kozłowska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Iwona Małgorzata",
+            "s_name": "Krawczyk",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Izabela",
+            "s_name": "Bodnar",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Izabela Katarzyna",
+            "s_name": "Mrzygłocka",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-08-10",
+            "deactivate_reason": "Zmarła"
+        },
+        {
+            "f_name": "Izabela",
+            "s_name": "Leszczyna",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jacek",
+            "s_name": "Bogucki",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jacek",
+            "s_name": "Czerniak",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jacek",
+            "s_name": "Karnowski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jacek",
+            "s_name": "Niedźwiedzki",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jacek",
+            "s_name": "Osuch",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jacek",
+            "s_name": "Ozdoba",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Jacek",
+            "s_name": "Protas",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Jacek",
+            "s_name": "Sasin",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jacek",
+            "s_name": "Tomczak",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jacek",
+            "s_name": "Świat",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jagna",
+            "s_name": "Marczułajtis-Walczak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrana na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Jakub",
+            "s_name": "Rutnicki",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jan",
+            "s_name": "Grabiec",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jan",
+            "s_name": "Kanthak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jan Krzysztof",
+            "s_name": "Ardanowski",
+            "clubs": [
+                {
+                    "club_name": "Republikanie",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jan Michał",
+            "s_name": "Dziedziczak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jan",
+            "s_name": "Mosiński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jan",
+            "s_name": "Warzecha",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Janusz",
+            "s_name": "Cichoń",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Janusz",
+            "s_name": "Cieszyński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Janusz",
+            "s_name": "Kowalski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jarosław",
+            "s_name": "Kaczyński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jarosław",
+            "s_name": "Krajewski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jarosław",
+            "s_name": "Rzepa",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jarosław",
+            "s_name": "Sachajko",
+            "clubs": [
+                {
+                    "club_name": "Republikanie",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jarosław",
+            "s_name": "Sellin",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jarosław",
+            "s_name": "Urbaniak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jarosław",
+            "s_name": "Wałęsa",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jarosław Wiesław",
+            "s_name": "Wieczorek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jarosław",
+            "s_name": "Zieliński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jerzy",
+            "s_name": "Materna",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jerzy",
+            "s_name": "Meysztowicz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jerzy",
+            "s_name": "Polaczek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Joanna",
+            "s_name": "Borowiak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Joanna",
+            "s_name": "Frydrych",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Joanna",
+            "s_name": "Kluzik-Rostkowska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Joanna",
+            "s_name": "Lichocka",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Joanna",
+            "s_name": "Mucha",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Joanna",
+            "s_name": "Scheuring-Wielgus",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrana na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Joanna",
+            "s_name": "Wicha",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jolanta",
+            "s_name": "Niezgodzka",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Jolanta",
+            "s_name": "Zięba-Gzik",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Józefa",
+            "s_name": "Szczurek-Żelazko",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Kacper",
+            "s_name": "Płażyński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Kamil",
+            "s_name": "Bortniczuk",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Kamil",
+            "s_name": "Wnuk",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Kamila",
+            "s_name": "Gasiuk-Pihowicz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrana na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Karina Anna",
+            "s_name": "Bosak",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Karolina",
+            "s_name": "Pawliczak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Katarzyna Anna",
+            "s_name": "Lubnauer",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Katarzyna",
+            "s_name": "Czochara",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Katarzyna",
+            "s_name": "Kierzek-Koperska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Katarzyna",
+            "s_name": "Kotula",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Katarzyna",
+            "s_name": "Królak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Katarzyna Maria",
+            "s_name": "Piekarska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Katarzyna",
+            "s_name": "Matusik-Lipiec",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Katarzyna",
+            "s_name": "Osos",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Katarzyna",
+            "s_name": "Stachowicz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-05-06"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Katarzyna",
+            "s_name": "Sójka",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Katarzyna",
+            "s_name": "Ueberhan",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Kazimierz Bogusław",
+            "s_name": "Choma",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Kazimierz",
+            "s_name": "Gołojuch",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Kazimierz",
+            "s_name": "Gwiazdowski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Kazimierz",
+            "s_name": "Plocke",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Kazimierz",
+            "s_name": "Smoliński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Kinga",
+            "s_name": "Gajewska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Klaudia",
+            "s_name": "Jachira",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Konrad",
+            "s_name": "Berkowicz",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Konrad",
+            "s_name": "Frysztak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krystian",
+            "s_name": "Łuczak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-04-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krystyna",
+            "s_name": "Sibińska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krystyna",
+            "s_name": "Skowrońska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krystyna",
+            "s_name": "Szumilas",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Bojarski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Bosak",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Brejza",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-01-05",
+            "deactivate_reason": "Objął mandat posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Ciecióra",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Czarnecki",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Gadowski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Gawkowski",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Grabczuk",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Habura",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Hetman",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Kubów",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Lipiec",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Mieszkowski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Mulawa",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Paszyk",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Piątkowski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Sobolewski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Szczucki",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Szymański",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Tchórzewski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Truskolaski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Tuduj",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Krzysztof",
+            "s_name": "Śmiszek",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Leonard",
+            "s_name": "Krasulski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Lidia",
+            "s_name": "Burzyńska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Lidia",
+            "s_name": "Czechak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Lucjan Marek",
+            "s_name": "Pietrzczyk",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Maciej",
+            "s_name": "Konieczny",
+            "clubs": [
+                {
+                    "club_name": "Razem",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Maciej",
+            "s_name": "Lasek",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Maciej",
+            "s_name": "Małecki",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Maciej",
+            "s_name": "Tomczykiewicz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Maciej",
+            "s_name": "Wróbel",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Maciej",
+            "s_name": "Wąsik",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2023-12-20",
+            "deactivate_reason": "Utrata prawa wybieralności"
+        },
+        {
+            "f_name": "Magdalena",
+            "s_name": "Filiks",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Magdalena",
+            "s_name": "Filipek-Sobczak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Magdalena Małgorzata",
+            "s_name": "Kołodziejczak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Magdalena",
+            "s_name": "Roguska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Magdalena",
+            "s_name": "Sroka",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Magdalena",
+            "s_name": "Łośko",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-01-05"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Maja Ewa",
+            "s_name": "Nowak",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcelina",
+            "s_name": "Zawisza",
+            "clubs": [
+                {
+                    "club_name": "Razem",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Bosacki",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Grabowski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Gwóźdź",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Horała",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Józefaciuk",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Kierwiński",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Kulasek",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Ociepa",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Porzucek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Przydacz",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Romanowski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Skonieczka",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marcin",
+            "s_name": "Warchoł",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Ast",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Biernacki",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Gróbarczyk",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Gzik",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Jakubiak",
+            "clubs": [
+                {
+                    "club_name": "Republikanie",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek Jan",
+            "s_name": "Chmielewski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Krząkała",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Kuchciński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Matuszewski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Rząsa",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Sawicki",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Sowa",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Suski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek Tomasz",
+            "s_name": "Hok",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marek",
+            "s_name": "Wesoły",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Maria Joanna",
+            "s_name": "Koźlakiewicz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Maria",
+            "s_name": "Koc",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Maria",
+            "s_name": "Kurowska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Maria Małgorzata",
+            "s_name": "Janyska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Mariusz",
+            "s_name": "Błaszczak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Mariusz",
+            "s_name": "Gosek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Mariusz",
+            "s_name": "Kamiński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2023-12-20",
+            "deactivate_reason": "Utrata prawa wybieralności"
+        },
+        {
+            "f_name": "Mariusz",
+            "s_name": "Kałużny",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Mariusz",
+            "s_name": "Krystian",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Mariusz",
+            "s_name": "Popielarz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Mariusz",
+            "s_name": "Witczak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marlena Magdalena",
+            "s_name": "Maląg",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrana na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Marta",
+            "s_name": "Golbik",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marta",
+            "s_name": "Stożek",
+            "clubs": [
+                {
+                    "club_name": "Razem",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marta",
+            "s_name": "Wcisło",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrana na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Marzena Anna",
+            "s_name": "Machałek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Marzena",
+            "s_name": "Okła-Drewnowicz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Mateusz",
+            "s_name": "Bochenek",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Mateusz",
+            "s_name": "Morawiecki",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Małgorzata",
+            "s_name": "Golińska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Małgorzata",
+            "s_name": "Gosiewska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrana na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Małgorzata",
+            "s_name": "Gromadzka",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Małgorzata",
+            "s_name": "Niemczyk",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Małgorzata",
+            "s_name": "Pępek",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Małgorzata",
+            "s_name": "Tracz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Małgorzata",
+            "s_name": "Wassermann",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Cieślak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Gramatyka",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Jaros",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Kobosko",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Kowalski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Kołodziejczak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Krawczyk",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Moskal",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Michał Paweł",
+            "s_name": "Dworczyk",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Połuboczek",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Pyrzyk",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Szczerba",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Wawer",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Woś",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Michał",
+            "s_name": "Wójcik",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Mirosław Adam",
+            "s_name": "Orliński",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Mirosław",
+            "s_name": "Maliszewski",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Mirosław",
+            "s_name": "Suchoń",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Mirosława",
+            "s_name": "Nykiel",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrana na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Mirosława",
+            "s_name": "Stachowiak-Różecka",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Monika",
+            "s_name": "Pawłowska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-12-20"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Monika",
+            "s_name": "Rosa",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Monika",
+            "s_name": "Wielichowska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Norbert Jakub",
+            "s_name": "Kaczmarczyk",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Norbert",
+            "s_name": "Pietrykowski",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Olga Ewa",
+            "s_name": "Semeniuk-Patkowska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Patryk",
+            "s_name": "Gabriel",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Patryk",
+            "s_name": "Jaskulski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Patryk",
+            "s_name": "Wicher",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paulina",
+            "s_name": "Hennig-Kloska",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paulina",
+            "s_name": "Matysiak",
+            "clubs": [
+                {
+                    "club_name": "Razem",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Bejda",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Bliźniuk",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Hreniak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Jabłoński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Kowal",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Kukiz",
+            "clubs": [
+                {
+                    "club_name": "Republikanie",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Masełko",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-03-27"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Olszewski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Papke",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Rychlik",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Sałek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Suski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Szefernaker",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Szrot",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Zalewski",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Paweł",
+            "s_name": "Śliz",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Adamowicz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Babinetz",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Borys",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Gliński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Górnikiewicz",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Głowski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Kaleta",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Kandyba",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Kowal",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Król",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Lachowicz",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Müller",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Piotr Paweł",
+            "s_name": "Strach",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Polak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Uruski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Uściński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Piotr",
+            "s_name": "Zgorzelski",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Przemysław",
+            "s_name": "Czarnek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Przemysław",
+            "s_name": "Drabek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Przemysław",
+            "s_name": "Wipler",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Przemysław",
+            "s_name": "Witek",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Radosław",
+            "s_name": "Fogiel",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Radosław",
+            "s_name": "Lubczyk",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Rafał",
+            "s_name": "Bochenek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Rafał",
+            "s_name": "Kasprzyk",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Rafał",
+            "s_name": "Komarewicz",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Rafał",
+            "s_name": "Romanowski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Rafał",
+            "s_name": "Siemaszko",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Rafał",
+            "s_name": "Weber",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Rajmund",
+            "s_name": "Miller",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-03-27",
+            "deactivate_reason": "Zmarł"
+        },
+        {
+            "f_name": "Renata",
+            "s_name": "Rak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Robert",
+            "s_name": "Dowhan",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Robert",
+            "s_name": "Gontarz",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Robert",
+            "s_name": "Jagła",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-08-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Robert",
+            "s_name": "Kropiwnicki",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Robert",
+            "s_name": "Telus",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Robert",
+            "s_name": "Wardzała",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Robert",
+            "s_name": "Warwas",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Roman",
+            "s_name": "Fritz",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Roman",
+            "s_name": "Giertych",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Ryszard",
+            "s_name": "Bartosik",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Ryszard",
+            "s_name": "Petru",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Ryszard",
+            "s_name": "Terlecki",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Ryszard",
+            "s_name": "Wilk",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Sebastian",
+            "s_name": "Kaleta",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Sebastian",
+            "s_name": "Łukaszewicz",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Stanisław",
+            "s_name": "Gorczyca",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Stanisław",
+            "s_name": "Lamczyk",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Stanisław",
+            "s_name": "Szwed",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Stanisław",
+            "s_name": "Tomczyszyn",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Stanisław",
+            "s_name": "Tyszka",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Stefan",
+            "s_name": "Krajewski",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Sylwester",
+            "s_name": "Tułajew",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Sylwia",
+            "s_name": "Bielawska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Szymon",
+            "s_name": "Giżyński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Szymon",
+            "s_name": "Hołownia",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Szymon",
+            "s_name": "Pogoda",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Sławomir",
+            "s_name": "Mentzen",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Sławomir",
+            "s_name": "Nitras",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Sławomir",
+            "s_name": "Skwarek",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Sławomir",
+            "s_name": "Zawiślak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Sławomir",
+            "s_name": "Ćwik",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Tadeusz",
+            "s_name": "Chrzan",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Tadeusz",
+            "s_name": "Samborski",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Tadeusz",
+            "s_name": "Tomaszewski",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Tadeusz",
+            "s_name": "Woźniak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Teresa",
+            "s_name": "Pamuła",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Teresa",
+            "s_name": "Wilk",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Tomasz",
+            "s_name": "Głogowski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Tomasz",
+            "s_name": "Kostuś",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Tomasz Piotr",
+            "s_name": "Nowak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Tomasz",
+            "s_name": "Siemoniak",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Tomasz",
+            "s_name": "Szymański",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Tomasz",
+            "s_name": "Trela",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Tomasz",
+            "s_name": "Zieliński",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Tomasz",
+            "s_name": "Zimoch",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Urszula",
+            "s_name": "Augustyn",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Urszula",
+            "s_name": "Koszutska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2024-06-10"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Urszula",
+            "s_name": "Nowogórska",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Urszula",
+            "s_name": "Pasławska",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Urszula",
+            "s_name": "Rusecka",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Urszula Sara",
+            "s_name": "Zielińska",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Waldemar",
+            "s_name": "Andzel",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Waldemar",
+            "s_name": "Buda",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-06-10",
+            "deactivate_reason": "Wybrany na posła do Parlamentu Europejskiego"
+        },
+        {
+            "f_name": "Waldemar",
+            "s_name": "Sługocki",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Wanda",
+            "s_name": "Nowicka",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Weronika",
+            "s_name": "Smarduch",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Wiesław",
+            "s_name": "Krajewski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Wiesław",
+            "s_name": "Różyński",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Wiesław",
+            "s_name": "Szczepański",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Wioleta",
+            "s_name": "Tomczak",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Wioletta Maria",
+            "s_name": "Kulpa",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-12-20"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Witold",
+            "s_name": "Tumanowicz",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Witold Wojciech",
+            "s_name": "Czarnecki",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Witold",
+            "s_name": "Zembaczyński",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Wojciech",
+            "s_name": "Król",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Wojciech Michał",
+            "s_name": "Zubowski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Wojciech",
+            "s_name": "Saługa",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": false,
+            "active_to": "2024-05-06",
+            "deactivate_reason": "Wybrany na funkcję Marszałka Województwa Śląskiego"
+        },
+        {
+            "f_name": "Wojciech",
+            "s_name": "Szarama",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Władysław",
+            "s_name": "Bartoszewski",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Władysław",
+            "s_name": "Dajczak",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Władysław",
+            "s_name": "Kosiniak-Kamysz",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Władysław",
+            "s_name": "Kurowski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Włodzimierz",
+            "s_name": "Czarzasty",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Włodzimierz",
+            "s_name": "Skalik",
+            "clubs": [
+                {
+                    "club_name": "Konfederacja",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Włodzimierz",
+            "s_name": "Tomaszewski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Włodzisław",
+            "s_name": "Giziński",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Zbigniew",
+            "s_name": "Bogucki",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Zbigniew",
+            "s_name": "Chmielowiec",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Zbigniew",
+            "s_name": "Dolata",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Zbigniew",
+            "s_name": "Hoffmann",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Zbigniew",
+            "s_name": "Konwiński",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Zbigniew Krzysztof",
+            "s_name": "Kuźmiuk",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Zbigniew",
+            "s_name": "Rau",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Zbigniew",
+            "s_name": "Sosnowski",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Zbigniew",
+            "s_name": "Ziejewski",
+            "clubs": [
+                {
+                    "club_name": "PSL",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Zbigniew",
+            "s_name": "Ziobro",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Zdzisław",
+            "s_name": "Gawlik",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Zofia",
+            "s_name": "Czernow",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "van Heukelom Agnieszka",
+            "s_name": "Wojciechowska",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "vel Sęk Szymon",
+            "s_name": "Szynkowski",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Łukasz",
+            "s_name": "Horbatowski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Łukasz",
+            "s_name": "Kmita",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Łukasz",
+            "s_name": "Litewka",
+            "clubs": [
+                {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Łukasz",
+            "s_name": "Mejza",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Łukasz",
+            "s_name": "Osmalak",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Łukasz",
+            "s_name": "Schreiber",
+            "clubs": [
+                {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Łukasz",
+            "s_name": "Ściebiorowski",
+            "clubs": [
+                {
+                    "club_name": "KO",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        },
+        {
+            "f_name": "Żaneta",
+            "s_name": "Cwalina-Śliwowska",
+            "clubs": [
+                {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13"
+                }
+            ],
+            "active": true
+        }
+    ]
+}

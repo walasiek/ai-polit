@@ -24,6 +24,15 @@ class TranscriptQuery:
         self._clear_cache()
 
     def query(self, what_to_dump, to_filehandle=None, to_list=None):
+        """
+        Queries Transcripts.
+        By default dumps to stdout.
+
+        Params:
+        - what_to_dump - one of choices from AVAILABLE_TO_DUMP, refers to particular tags of the XML transcript file (check hipisejm README for details)
+        - to_filehandle - if defined, then uses this filehandle to save dumped parts
+        - to_list - if defined then each dumped txt is appended to given list (ignored if to_filehandle is defined)
+        """
         # workaround for argparse :)
         if isinstance(what_to_dump, list):
             what_to_dump = {k for k in what_to_dump}
@@ -72,10 +81,10 @@ class TranscriptQuery:
                                 self._put_to_dump(speech_content.text)
 
     def _put_to_dump(self, txt):
-        if self.cache['out_list'] is not None:
-            self.cache['out_list'].append(txt)
-        elif self.cache['out_file'] is not None:
+        if self.cache['out_file'] is not None:
             self.cache['out_file'].write(txt)
             self.cache['out_file'].write("\n")
+        elif self.cache['out_list'] is not None:
+            self.cache['out_list'].append(txt)
         else:
             print(txt)
