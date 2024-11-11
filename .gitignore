@@ -1,3 +1,11 @@
+# Notebooks which should not be uploaded to repo (drafts / playgrounds)
+notebooks/002_*
+notebooks/003_*
+notebooks/004_*
+notebooks/005_*
+notebooks/009_*
+notebooks/010-*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -133,3 +141,6 @@ dmypy.json
 *~
 zrzut*
 local_scripts/*
+local_data/*
+www-*
+resources/matura/
