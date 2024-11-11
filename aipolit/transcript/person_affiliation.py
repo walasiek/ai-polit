@@ -96,6 +96,27 @@ class Person:
         else:
             return date_to_text(d)
 
+    def sort_clubs(self):
+        """
+        Clubs should be sorted in ascending order, last one is current
+        """
+        if len(self.all_clubs) < 2:
+            return
+
+        def get_for_sort_func(e):
+            k1 = self.date_to_text_with_unk(e.get('from_date', None))
+            k2 = self.date_to_text_with_unk(e.get('to_date', None))
+
+            if k1 is None:
+                k1 = '1000-01-01'
+            if k2 is None:
+                k2 = '3000-01-01'
+
+            return (k1, k2)
+
+        sorted_clubs = [c for c in sorted(self.all_clubs, key=get_for_sort_func)]
+        self.all_clubs = sorted_clubs
+
     @classmethod
     def text_to_date_with_unk(cls, txt: str):
         if txt is None:
@@ -122,6 +143,8 @@ class Person:
         if not new_person.is_active:
             new_person.deactivate_reason = json_entry['deactivate_reason']
             new_person.active_to = cls.text_to_date_with_unk(json_entry['active_to'])
+
+        new_person.sort_clubs()
         return new_person
 
 
@@ -140,6 +163,7 @@ class PersonAffiliation:
     def __init__(self, fixed_filepath: Optional[str] = None):
         self.person_data = []
         self.name_to_entry = dict()
+        self.input_data_filepath = None
         self._load_data(fixed_filepath)
 
     def count(self, only_active: Optional[bool] = False) -> int:
@@ -185,6 +209,7 @@ class PersonAffiliation:
         else:
             fp = os.path.join("resources", self.AFFILIATION_DATA_DIR, "sejm.json")
 
+        self.input_data_filepath = os.path.abspath(fp)
         data = None
         with open(fp, "r") as f:
             data = json.load(f)

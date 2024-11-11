@@ -23,6 +23,8 @@ Data sources:
 1. Data for sejm 10th term (download those pages and use as input params)
 - active: https://www.sejm.gov.pl/Sejm10.nsf/poslowie.xsp?type=A
 - deactivated: https://www.sejm.gov.pl/Sejm10.nsf/poslowie.xsp?type=B
+
+To manually fill correct dates it is useful to check: https://pl.wikipedia.org/wiki/Pos%C5%82owie_na_Sejm_Rzeczypospolitej_Polskiej_X_kadencji
 """
 
 
@@ -141,9 +143,12 @@ def merge_with_old(args, data):
     new_data = create_new_data(data)
 
     # add all new to person_affiliation
-    not_added = []
+
+    names_in_new_data = set()
     for e in new_data:
         old_person = person_affiliation.get_person_by_f_name_and_s_name(e['f_name'], e['s_name'])
+        names_in_new_data.add(f"{e['f_name']} {e['s_name']}")
+
         if old_person is None:
             club_entry = {
                 'club_name': e['current_club_name'],
@@ -156,10 +161,30 @@ def merge_with_old(args, data):
 
             person_affiliation.add_person(Person.from_json_entry(e))
         else:
-            # TODO need to merge conflict
-            pass
+            # Cases for conflicts:
 
-    # TODO check if there is someone in "old" data who does not appear in new data
+            # Case 1: inconsistent activity (MP is not active anymore)
+            if old_person.check_is_active() != e['active']:
+                if not e['active']:
+                    old_person.is_active = False
+                    old_person.deactivate_reason = e['deactivate_reason']
+                    old_person.active_to = f"{Person.UNK_ENTRY}_DEACTIVATE_DATE"
+                else:
+                    raise ValueError(f"Inconsistent data... It seems person_affiliation who was not active is active in new parsed data! This is impossible... so please check if there is no implementation error: {str(e)}")
+
+            else:
+                # Case 2: inconsistent club (change of club), and person still active
+                if (old_person.get_club() != e['current_club_name']) and e['active']:
+                    old_person.all_clubs[-1]['to_date'] = f"{Person.UNK_ENTRY}_CHANGE_OF_CLUB_DATE"
+                    old_person.all_clubs.append({
+                        'club_name': e['current_club_name'],
+                        'from_date': f"{Person.UNK_ENTRY}_CHANGE_OF_CLUB_DATE"
+                    })
+
+    # Check if there is someone in "old" data who does not appear in new data
+    for name in person_affiliation.name_to_entry.keys():
+        if name not in names_in_new_data:
+            logging.info("WARNING: Name %s from old PersonAffiliation data file not found in new parsed data!", name)
 
     return person_affiliation
 
@@ -176,8 +201,16 @@ def read_data_from_files(args):
             read_data_from_deactivated_file(f, data['deactivated'])
 
     person_affiliation = merge_with_old(args, data)
-    # TODO merge with old data
     person_affiliation.dump_to_json_file(args.output)
+
+    logging.info("Saving new data file to: %s\n\n"
+                 "Now you should review the file manually and check for all 'TODO' e.g.:\n"
+                 "  diff %s %s\n\n"
+                 "When you are done please save the file to:\n"
+                 "  cp %s %s",
+                 args.output,
+                 person_affiliation.input_data_filepath, args.output,
+                 person_affiliation.input_data_filepath, args.output)
 
 
 def main():
