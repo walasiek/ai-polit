@@ -188,7 +188,7 @@ def merge_with_old(args, data):
 
     return person_affiliation
 
-def read_data_from_files(args):
+def process_data_from_files(args):
     data = dict()
     data['active'] = []
 
@@ -216,9 +216,7 @@ def read_data_from_files(args):
 def main():
     args = parse_arguments()
 
-    data = read_data_from_files(args)
-
-    # TODO
+    process_data_from_files(args)
 
 
 main()
