@@ -27,8 +27,13 @@
             "s_name": "Gomoła",
             "clubs": [
                 {
+                    "club_name": "PL2050",
+                    "from_date": "2023-10-13",
+                    "to_date": "2024-03-06"
+                },
+                {
                     "club_name": "niezależni",
-                    "from_date": "2023-10-13"
+                    "from_date": "2024-03-06"
                 }
             ],
             "active": true
@@ -82,8 +87,13 @@
             "s_name": "Zandberg",
             "clubs": [
                 {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13",
+                    "to_date": "2024-11-05"
+                },
+                {
                     "club_name": "Razem",
-                    "from_date": "2023-10-13"
+                    "from_date": "2024-11-05"
                 }
             ],
             "active": true
@@ -1837,8 +1847,13 @@
             "s_name": "Ardanowski",
             "clubs": [
                 {
+                    "club_name": "PiS",
+                    "from_date": "2023-10-13",
+                    "to_date": "2024-10-16"
+                },
+                {
                     "club_name": "Republikanie",
-                    "from_date": "2023-10-13"
+                    "from_date": "2024-10-16"
                 }
             ],
             "active": true
@@ -1947,8 +1962,13 @@
             "s_name": "Sachajko",
             "clubs": [
                 {
+                    "club_name": "Kukiz15",
+                    "from_date": "2023-10-13",
+                    "to_date": "2024-10-16"
+                },
+                {
                     "club_name": "Republikanie",
-                    "from_date": "2023-10-13"
+                    "from_date": "2024-10-16"
                 }
             ],
             "active": true
@@ -2793,8 +2813,13 @@
             "s_name": "Konieczny",
             "clubs": [
                 {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13",
+                    "to_date": "2024-11-05"
+                },
+                {
                     "club_name": "Razem",
-                    "from_date": "2023-10-13"
+                    "from_date": "2024-11-05"
                 }
             ],
             "active": true
@@ -2938,8 +2963,13 @@
             "s_name": "Zawisza",
             "clubs": [
                 {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13",
+                    "to_date": "2024-11-05"
+                },
+                {
                     "club_name": "Razem",
-                    "from_date": "2023-10-13"
+                    "from_date": "2024-11-05"
                 }
             ],
             "active": true
@@ -3138,8 +3168,13 @@
             "s_name": "Jakubiak",
             "clubs": [
                 {
+                    "club_name": "Kukiz15",
+                    "from_date": "2023-10-13",
+                    "to_date": "2024-10-16"
+                },
+                {
                     "club_name": "Republikanie",
-                    "from_date": "2023-10-13"
+                    "from_date": "2024-10-16"
                 }
             ],
             "active": true
@@ -3406,8 +3441,13 @@
             "s_name": "Stożek",
             "clubs": [
                 {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13",
+                    "to_date": "2024-11-05"
+                },
+                {
                     "club_name": "Razem",
-                    "from_date": "2024-06-10"
+                    "from_date": "2024-11-05"
                 }
             ],
             "active": true
@@ -3891,8 +3931,13 @@
             "s_name": "Matysiak",
             "clubs": [
                 {
+                    "club_name": "Lewica",
+                    "from_date": "2023-10-13",
+                    "to_date": "2024-11-05"
+                },
+                {
                     "club_name": "Razem",
-                    "from_date": "2023-10-13"
+                    "from_date": "2024-11-05"
                 }
             ],
             "active": true
@@ -3957,8 +4002,13 @@
             "s_name": "Kukiz",
             "clubs": [
                 {
+                    "club_name": "Kukiz15",
+                    "from_date": "2023-10-13",
+                    "to_date": "2024-10-16"
+                },
+                {
                     "club_name": "Republikanie",
-                    "from_date": "2023-10-13"
+                    "from_date": "2024-10-16"
                 }
             ],
             "active": true
