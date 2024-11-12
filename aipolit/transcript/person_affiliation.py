@@ -163,6 +163,7 @@ class PersonAffiliation:
     def __init__(self, fixed_filepath: Optional[str] = None):
         self.person_data = []
         self.name_to_entry = dict()
+        self.normalized_name_to_name = dict()
         self.input_data_filepath = None
         self._load_data(fixed_filepath)
 
@@ -177,17 +178,27 @@ class PersonAffiliation:
             return len(self.person_data)
 
     def get_person_by_name(self, name: str) -> Optional[Person]:
-        return self.name_to_entry.get(name, None)
+        person = self.name_to_entry.get(name, None)
+        if person is not None:
+            return person
+        else:
+            normalized_name = self._normalize_name(name)
+            canon_name = self.normalized_name_to_name.get(normalized_name)
+            if canon_name is not None:
+                return self.name_to_entry.get(canon_name, None)
+
+        return None
 
     def get_person_by_f_name_and_s_name(self, f_name: str, s_name: str) -> Optional[Person]:
         name = create_name_from_f_s_name(f_name, s_name)
-        return self.name_to_entry.get(name, None)
+        return self.get_person_by_name(name)
 
     def add_person(self, new_person: Person):
         if new_person.name in self.name_to_entry:
             logging.info("DUPLICATE name found in PersonAffiliation datafile: %s (will not be added)", new_person.name)
 
         self.name_to_entry[new_person.name] = new_person
+        self.normalized_name_to_name[self._normalize_name(new_person.name)] = new_person.name
         self.person_data.append(new_person)
 
     def dump_to_json_file(self, filepath: str):
@@ -217,3 +228,6 @@ class PersonAffiliation:
         for entry in data['poslowie']:
             new_person = Person.from_json_entry(entry)
             self.add_person(new_person)
+
+    def _normalize_name(self, name: str) -> str:
+        return name.lower()
