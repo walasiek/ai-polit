@@ -28,13 +28,23 @@ def parse_arguments():
         nargs='+',
         help=f"What should be dumped. Any combination of: [{', '.join(sorted(AVAILABLE_TO_DUMP))}]")
 
+    parser.add_argument(
+        '--speaker_affiliation', '-sa',
+        type=str,
+        nargs="+",
+        help='If defined, then processes only speakers with one of given affiliations (separate by space).')
+
     args = parser.parse_args()
 
     return args
 
 
 def run_query(transcript_query, args, filehandle=None):
-    transcript_query.query(args.what, to_filehandle=filehandle)
+    transcript_query.query(
+        args.what,
+        to_filehandle=filehandle,
+        restrict_speaker_affiliations=args.speaker_affiliation,
+    )
 
 
 def main():
