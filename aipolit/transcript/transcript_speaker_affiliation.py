@@ -28,11 +28,9 @@ class TranscriptSpeakerAffiliation:
         assert not (when is not None and when_txt is not None), "both 'when' and 'when_txt' should not be defined at the same time (impl error)"
 
         # 1. regex match - last string of the speaker name (case insensitive, regex from right to left matching)
-        match = self.all_names_regex.search(speaker_name)
-        if not match:
+        matched_name = self.normalize_name(speaker_name)
+        if matched_name is None:
             return None
-
-        matched_name = match.group(1)
 
         # 2. get club during 'when' for person matched
         person = self.person_affiliation.get_person_by_name(matched_name)
@@ -43,6 +41,20 @@ class TranscriptSpeakerAffiliation:
             when_txt = date_to_text(when)
 
         return person.get_club(when_txt)
+
+    def normalize_name(self, speaker_name: str) -> Optional[str]:
+        """
+        Tries to normalize name using database of persons in affilaitions.
+        Returns name as it appears in affiliations data (if found)
+        or None if cant find such person in our data.
+        """
+        match = self.all_names_regex.search(speaker_name)
+        if not match:
+            return None
+
+        matched_name = match.group(1)
+        return matched_name
+
 
     def _create_all_names_regex(self):
         regex_chunks = []

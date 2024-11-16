@@ -62,6 +62,41 @@ class TranscriptQuery:
     def count_transcripts(self):
         return len(self.transcripts)
 
+    def assign_speakers_to_affiliations(self):
+        """
+        Collects all unique speakers from "speech" tags, and for all of them tries to assign affiliation.
+
+        Returns dict: speaker_name -> entry, where each entry is also a dict with keys:
+        - speaker_name (str) - as it appears in transcript
+        - affiliations (set(str)) - set of all affiliations, if cant assign then set is empty
+        - canon_name (str) - canon name (if cant assign then None)
+        """
+        result = []
+
+        speaker_name_to_entry = dict()
+
+        for transcript in self.transcripts:
+            transcript_when = text_to_date(transcript.session_date)
+
+            for session_speech in transcript.session_content:
+                speaker_name = session_speech.speaker
+                if speaker_name not in speaker_name_to_entry:
+                    speaker_name_to_entry[speaker_name] = {
+                        'speaker_name': speaker_name,
+                        'affiliations': set(),
+                        'canon_name': None,
+                    }
+
+                entry = speaker_name_to_entry[speaker_name]
+                speaker_affiliation = self.transcript_speaker_affiliation.assign_affiliation(
+                    speaker_name, when=transcript_when)
+                if speaker_affiliation:
+                    entry['affiliations'].add(speaker_affiliation)
+                    canon = self.transcript_speaker_affiliation.normalize_name(speaker_name)
+                    entry['canon_name'] = canon
+
+        return speaker_name_to_entry
+
     def _clear_cache(self):
         self.cache = dict()
         self.cache['out_file'] = None
