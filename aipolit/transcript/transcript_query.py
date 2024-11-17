@@ -105,7 +105,7 @@ class TranscriptQuery:
 
     def _dump_matching(self, matching_transcripts, what_to_dump, restrict_speaker_affiliations):
         restrict_speaker_affiliations_set = set()
-        if restrict_speaker_affiliations_set is not None:
+        if restrict_speaker_affiliations is not None:
             restrict_speaker_affiliations_set = {r for r in restrict_speaker_affiliations}
 
         for transcript in matching_transcripts:
