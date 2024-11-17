@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+from argparse import RawTextHelpFormatter
 import logging
 logging.basicConfig(level=logging.DEBUG, format='[%(levelname)s] %(asctime)s\t%(message)s')
 
@@ -11,7 +12,30 @@ from aipolit.transcript.transcript_query import TranscriptQuery, AVAILABLE_TO_DU
 def parse_arguments():
     """parse command line arguments"""
     parser = argparse.ArgumentParser(
-        description='Allows to dump specific part of Transcript XMLs to TXT dump for easier data processing.'
+        description="""Allows to dump specific part of Transcript XMLs to TXT dump for easier data processing.
+
+Useful use cases:
+
+
+    - Ranking of who interrupts the most:
+    ./bin/aipolit-transcript-query.py -w utt_interrupt_by | sort |uniq -c |sort -nr|less
+
+    - Ranking of the most common interruptions
+    ./bin/aipolit-transcript-query.py -w utt_interrupt | sort |uniq -c |sort -nr|less
+
+    - Ranking of the most common reactions
+    ./bin/aipolit-transcript-query.py -w utt_reaction | sort |uniq -c |sort -nr|less
+
+    - Ranking who speaks the most
+    ./bin/aipolit-transcript-query.py -w speech_speaker | sort |uniq -c |sort -nr|less
+
+    - Raw speakers of the given political affiliations
+    ./bin/aipolit-transcript-query.py -w speech_speaker -sa KO
+
+    - Utterances only from speakers of multiple political affiliations
+    ./bin/aipolit-transcript-query.py -w utt_norm -sa KO PiS
+        """,
+        formatter_class=RawTextHelpFormatter
     )
 
     parser.add_argument(

@@ -89,3 +89,19 @@ def test_dummy_affiliation_ignore_letter_case(input_text, input_date_txt, expect
 
     assert actual_affiliation is not None, "affiliation is defined"
     assert actual_affiliation == expected_text, "Affiliation correct as expected"
+
+
+@pytest.mark.parametrize(
+    "input_text, input_date_txt, expected_text",
+    [
+        ("Leopold Maria Nowak", "2024-12-31", "X"), # two names match
+        ("Leopold Nowak", "2024-12-31", "X"), # two names match, 2nd name is not in transcript, but it is in DB
+        ("Jan Marian Kowalski", "2024-12-31", "X"), # two names match, 2nd name is in transcript, but it is NOT in DB
+    ])
+def test_dummy_affiliation_real_examples(input_text, input_date_txt, expected_text):
+    actual_affiliation = dummy_transcript_speaker_affiliation.assign_affiliation(
+        input_text,
+        when_txt=input_date_txt)
+
+    assert actual_affiliation is not None, "affiliation is defined"
+    assert actual_affiliation == expected_text, "Affiliation correct as expected"

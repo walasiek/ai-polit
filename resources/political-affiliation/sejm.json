@@ -2533,7 +2533,7 @@
             "clubs": [
                 {
                     "club_name": "KO",
-                    "from_date": "2024-10-13"
+                    "from_date": "2023-10-13"
                 }
             ],
             "active": false,
@@ -4927,7 +4927,7 @@
             "clubs": [
                 {
                     "club_name": "KO",
-                    "from_date": "2024-06-10"
+                    "from_date": "2023-10-13"
                 }
             ],
             "active": true
@@ -5443,8 +5443,8 @@
             "active": true
         },
         {
-            "f_name": "van Heukelom Agnieszka",
-            "s_name": "Wojciechowska",
+            "f_name": "Agnieszka",
+            "s_name": "Wojciechowska van Heukelom",
             "clubs": [
                 {
                     "club_name": "PiS",
@@ -5454,8 +5454,8 @@
             "active": true
         },
         {
-            "f_name": "vel Sęk Szymon",
-            "s_name": "Szynkowski",
+            "f_name": "Szymon",
+            "s_name": "Szynkowski vel Sęk",
             "clubs": [
                 {
                     "club_name": "PiS",

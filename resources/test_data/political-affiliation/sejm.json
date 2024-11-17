@@ -12,6 +12,17 @@
             "active": true
         },
         {
+            "f_name": "Leopold Maria",
+            "s_name": "Nowak",
+            "clubs": [
+                {
+                    "club_name": "X",
+                    "from_date": "2024-01-01"
+                }
+            ],
+            "active": true
+        },
+        {
             "f_name": "Jan",
             "s_name": "Nowak",
             "clubs": [

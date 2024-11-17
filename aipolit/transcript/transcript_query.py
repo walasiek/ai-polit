@@ -90,6 +90,7 @@ class TranscriptQuery:
                 entry = speaker_name_to_entry[speaker_name]
                 speaker_affiliation = self.transcript_speaker_affiliation.assign_affiliation(
                     speaker_name, when=transcript_when)
+
                 if speaker_affiliation:
                     entry['affiliations'].add(speaker_affiliation)
                     canon = self.transcript_speaker_affiliation.normalize_name(speaker_name)

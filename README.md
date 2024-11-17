@@ -89,6 +89,24 @@ In general you should:
 2. Review file produced by the script
 3. Copy it to the repository.
 
+bin/aipolit-transcript-query.py
+-------------------------------
+
+This script dumps specific parts of the transcript.
+Useful to quickly create TXT file with specific content.
+Check --help for some nice usage examples.
+
+bin/aipolit-transcript-dump-speakers-with-affiliations.py
+---------------------------------------------------------
+
+Assigns affiliations to all speakers appearing in transcripts.
+Useful for debug. You should review this list from time to time
+and check if there are no persons who are likely to be MPs, but they have <UNK> affiliation.
+This might be an error such as:
+
+- new MP in Sejm
+- implementation error (regex match)
+- transcript error (sometimes e.g. 2nd names are inconsistent)
 
 Notebooks
 =========
