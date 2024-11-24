@@ -93,3 +93,10 @@ AIPOLIT_10TERM_SEJM_TRANSCRIPTS_DIR = os.path.join(AIPOLIT_DATA_DIR, 'hipisejm-t
 #====================================
 
 AIPOLIT_CACHE_DIR = os.path.join(AIPOLIT_DATA_DIR, "cache")
+
+#====================================
+# Resources dir
+#====================================
+
+REPO_ROOT_DIR = os.path.join(os.getenv('AIPOLIT_REPO_ROOT'))
+RESOURCES_DIR = os.path.join(REPO_ROOT_DIR, "resources")

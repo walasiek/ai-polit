@@ -3,8 +3,9 @@ import json
 import logging
 from typing import Optional
 from datetime import date
-from aipolit.utils.date import text_to_date, date_to_text
 from collections import OrderedDict
+from aipolit.utils.date import text_to_date, date_to_text
+from aipolit.utils.globals import RESOURCES_DIR
 
 
 def create_name_from_f_s_name(f_name: str, s_name: str) -> str:
@@ -218,7 +219,7 @@ class PersonAffiliation:
         if fixed_filepath is not None:
             fp = fixed_filepath
         else:
-            fp = os.path.join("resources", self.AFFILIATION_DATA_DIR, "sejm.json")
+            fp = os.path.join(RESOURCES_DIR, self.AFFILIATION_DATA_DIR, "sejm.json")
 
         self.input_data_filepath = os.path.abspath(fp)
         data = None

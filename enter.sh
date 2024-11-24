@@ -7,6 +7,7 @@
 
 ENV_DIRNAME=ai-polit
 VIRTUALENV_DIR=$HOME/virtualenv/$ENV_DIRNAME
+export AIPOLIT_REPO_ROOT=`pwd`
 
 if [[ ! -d $VIRTUALENV_DIR ]]; then
     virtualenv -p python3 $VIRTUALENV_DIR

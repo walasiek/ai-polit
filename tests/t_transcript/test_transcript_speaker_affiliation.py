@@ -1,11 +1,13 @@
 import pytest
 from aipolit.transcript.transcript_speaker_affiliation import TranscriptSpeakerAffiliation
 from aipolit.transcript.person_affiliation import PersonAffiliation
+from aipolit.transcript.utils import load_transcripts
 
 
 sample_data_fp = "resources/test_data/political-affiliation/sejm.json"
 dummy_person_affiliation = PersonAffiliation(fixed_filepath=sample_data_fp)
 dummy_transcript_speaker_affiliation = TranscriptSpeakerAffiliation(dummy_person_affiliation)
+sample_transcript_dir = "resources/test_data/transcripts_sejm"
 
 
 @pytest.mark.parametrize(

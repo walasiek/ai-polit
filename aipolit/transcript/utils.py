@@ -5,18 +5,18 @@ from aipolit.utils.globals import AIPOLIT_10TERM_SEJM_TRANSCRIPTS_DIR
 from hipisejm.stenparser.transcript import SessionTranscript
 
 
-def load_transcripts(fixed_dir=None):
+def load_transcripts(
+        fixed_dir=None,
+        transcript_type='sejm'):
     """
     Loads transcripts from given directory.
 
     If fixed_dir is not None, then uses this dir with files
     Otherwise it uses: default AIPOLIT_10TERM_SEJM_TRANSCRIPTS_DIR
     """
-    TRANSCRIPT_TYPE_TO_PROCESS = 'sejm'
-
     processing_dir = fixed_dir
     if processing_dir is None:
-        processing_dir=os.path.join(AIPOLIT_10TERM_SEJM_TRANSCRIPTS_DIR, TRANSCRIPT_TYPE_TO_PROCESS)
+        processing_dir=os.path.join(AIPOLIT_10TERM_SEJM_TRANSCRIPTS_DIR, transcript_type)
 
     transcripts = []
     for filename in sorted(os.listdir(processing_dir)):
@@ -27,3 +27,10 @@ def load_transcripts(fixed_dir=None):
             transcripts.append(transcript)
 
     return transcripts
+
+
+def check_is_speaker_marszalek(speaker_name: str) -> bool:
+    """
+    Returns true if speaker seems to be Marszałek or Vice
+    """
+    return re.search(r".*marszałek.*", speaker_name, re.IGNORECASE)

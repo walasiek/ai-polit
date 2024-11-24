@@ -1,8 +1,12 @@
 import re
-from typing import Optional
+from typing import Optional, List, Dict
+from collections import defaultdict
 from datetime import date
 from aipolit.transcript.person_affiliation import PersonAffiliation
-from aipolit.utils.date import date_to_text
+from aipolit.utils.date import date_to_text, text_to_date
+from aipolit.transcript.utils import check_is_speaker_marszalek
+from hipisejm.stenparser.transcript import SessionTranscript
+from hipisejm.stenparser.transcript_utils import leave_only_specific_type_utt
 
 
 class TranscriptSpeakerAffiliation:
@@ -79,6 +83,80 @@ class TranscriptSpeakerAffiliation:
         matched_name = match.group(1)
         return matched_name
 
+    def create_affiliation_to_utts_from_transcripts(self, transcripts: List[SessionTranscript], only_process_parties: List[str] = None) -> defaultdict:
+        """
+        Creates dict which assigns affiliation to speeches from persons of the given affiliation.
+        Useful to analyse text with respect to speaker affiliation.
+
+        Returns dict which is:
+           key - affiliation (str)
+           value - list of entries, where each entry is dict with following keys:
+                'speaker_name': speaker_name as it appears in transcript,
+                'canon_name': canon_name of the speaker (after normalization from normalize_name),
+                'affiliation': speaker_affiliation assigned to the speaker (should be equal to root affiliation),
+                'utts_raw': merged string of all utt_norms
+                'when': string date of the transcript (useful to debug)
+
+        Please remark that we merge some SessionSpeech tags!
+        In particular if something is interrupted by "Marszałek", so the same speaker appears twice like this:
+          1. Speaker A
+          2. Marszałek
+          3. Speaker A
+
+        Then we merge speeches 1. and 3. assuming that speech 2. was an interruption.
+        Such merge allows to get rid of some loose speeches when the discussion is more energetic ;)
+
+        Optional args:
+
+        - only_process_parties - list of strings with parties to be included in the final result (if not defined - returns all which occur)
+        """
+        affiliation_to_entries = defaultdict(list)
+        only_process_parties_set = None
+        if only_process_parties is not None:
+            only_process_parties_set = {p for p in only_process_parties}
+
+        for transcript in transcripts:
+            when_txt = transcript.session_date
+            when = text_to_date(when_txt)
+
+            prev_speaker_name = None
+            prev_entry = None
+            for speech in transcript.session_content:
+
+                # this will merge multiple utts, if they are split by "Marszałek" (it sometimes happens that Marszałek interrupts longer speech)
+                # of course merge is possible only if prev speaker is the same as current (prev_speaker is not updated for marszałek)
+                should_merge_utts_with_prev = False
+                speaker_name = speech.speaker
+                if prev_speaker_name is not None and prev_speaker_name == speaker_name:
+                    should_merge_utts_with_prev = True
+
+                if check_is_speaker_marszalek(speaker_name):
+                    continue
+
+                prev_speaker_name = speaker_name
+
+                speaker_affiliation = self.assign_affiliation(speaker_name, when)
+                if speaker_affiliation is not None and (only_process_parties_set is None or speaker_affiliation in only_process_parties_set):
+                    canon_name = self.normalize_name(speaker_name)
+                    if canon_name is not None:
+                        utts = leave_only_specific_type_utt(speech.content, str)
+                        utts_raw = " ".join(utts)
+                        utts_raw = re.sub(r"\s+", " ", utts_raw)
+
+                        if should_merge_utts_with_prev:
+                            prev_entry['utts_raw'] += ' ' + utts_raw
+                        else:
+                            entry = {
+                                'speaker_name': speaker_name,
+                                'canon_name': canon_name,
+                                'affiliation': speaker_affiliation,
+                                'utts_raw': utts_raw,
+                                'when': when,
+                            }
+                            prev_entry = entry
+                            affiliation_to_entries[speaker_affiliation].append(entry)
+
+        return affiliation_to_entries
 
     def _create_all_names_regex(self):
         regex_chunks = []
